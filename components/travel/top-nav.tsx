@@ -33,7 +33,7 @@ export default function TopNav() {
           ))}
         </nav>
         <a
-          className="inline-flex items-center justify-center rounded-full bg-[color:var(--bhutan-terracotta)] px-5 py-2 text-xs font-semibold tracking-[0.2em] text-white uppercase transition hover:opacity-90"
+          className="interactive-lift inline-flex items-center justify-center rounded-full bg-[color:var(--bhutan-terracotta)] px-5 py-2 text-xs font-semibold tracking-[0.2em] text-white uppercase"
           href="#contact"
         >
           Book a consult

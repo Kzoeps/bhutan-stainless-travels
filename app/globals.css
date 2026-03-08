@@ -188,6 +188,66 @@
   .lead-strip {
     backdrop-filter: blur(8px);
   }
+
+  .motion-root .reveal {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+    animation: reveal-fade 700ms ease-out forwards;
+    animation-delay: calc(var(--reveal-delay, 0) * 120ms);
+    will-change: opacity, transform;
+  }
+
+  .interactive-lift {
+    transition:
+      transform 200ms ease,
+      box-shadow 200ms ease,
+      opacity 200ms ease;
+  }
+
+  .interactive-lift:hover,
+  .interactive-lift:focus-visible {
+    transform: translate3d(0, -2px, 0);
+    box-shadow: 0 18px 30px -24px rgba(15, 23, 42, 0.5);
+    opacity: 0.96;
+  }
+
+  .interactive-lift:focus-visible {
+    outline: 2px solid color-mix(in oklab, var(--bhutan-terracotta) 55%, white);
+    outline-offset: 3px;
+  }
+}
+
+@keyframes reveal-fade {
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-root * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .motion-root .reveal {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .interactive-lift {
+    transition: none;
+  }
+
+  .interactive-lift:hover,
+  .interactive-lift:focus-visible {
+    transform: none;
+    box-shadow: none;
+    opacity: 1;
+  }
 }
 
 @layer base {

@@ -1,3 +1,5 @@
+import type { CSSProperties } from "react"
+
 import { culturalHighlights } from "@/lib/bhutan-travel-content"
 
 export default function CulturalHighlights() {
@@ -6,7 +8,10 @@ export default function CulturalHighlights() {
       id="cultural-highlights"
       className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-12"
     >
-      <div className="flex flex-col gap-3">
+      <div
+        className="reveal flex flex-col gap-3"
+        style={{ "--reveal-delay": 1 } as CSSProperties}
+      >
         <p className="text-xs tracking-[0.2em] text-muted-foreground uppercase">
           Cultural immersion
         </p>
@@ -25,7 +30,8 @@ export default function CulturalHighlights() {
         {culturalHighlights.map((highlight, index) => (
           <article
             key={highlight.id}
-            className="group relative flex h-full flex-col gap-4 overflow-hidden rounded-[28px] border border-border/60 bg-card/80 p-6 shadow-[0_20px_60px_-50px_rgba(15,23,42,0.45)]"
+            className="reveal group relative flex h-full flex-col gap-4 overflow-hidden rounded-[28px] border border-border/60 bg-card/80 p-6 shadow-[0_20px_60px_-50px_rgba(15,23,42,0.45)]"
+            style={{ "--reveal-delay": index + 2 } as CSSProperties}
           >
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(148,163,184,0.16),_transparent_55%)] opacity-0 transition duration-300 group-hover:opacity-100" />
             <div className="relative flex flex-col gap-3">
@@ -47,7 +53,10 @@ export default function CulturalHighlights() {
         ))}
       </div>
 
-      <div className="rounded-2xl border border-dashed border-border/70 bg-card/60 p-4 text-sm text-muted-foreground">
+      <div
+        className="reveal rounded-2xl border border-dashed border-border/70 bg-card/60 p-4 text-sm text-muted-foreground"
+        style={{ "--reveal-delay": 6 } as CSSProperties}
+      >
         <span className="font-semibold text-foreground">
           Responsible travel note:
         </span>{" "}
