@@ -1,5 +1,7 @@
 import type { CSSProperties } from "react"
 
+import Image from "next/image"
+
 import { itineraries } from "@/lib/bhutan-travel-content"
 
 export default function ItineraryGrid() {
@@ -17,8 +19,7 @@ export default function ItineraryGrid() {
         </p>
         <h2 className="text-3xl font-semibold">Signature itineraries</h2>
         <p className="max-w-2xl text-sm text-muted-foreground">
-          Each itinerary is fully customizable, balancing sacred sites, scenic
-          drives, and time with local families.
+          Compact, photo-led journeys with clear pacing and local access.
         </p>
       </div>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -29,6 +30,17 @@ export default function ItineraryGrid() {
             style={{ "--reveal-delay": index + 2 } as CSSProperties}
           >
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(148,163,184,0.18),_transparent_55%)] opacity-0 transition duration-300 group-hover:opacity-100" />
+            <div className="relative overflow-hidden rounded-[24px]">
+              <div className="relative h-44 w-full">
+                <Image
+                  src={itinerary.imageSrc}
+                  alt={itinerary.imageAlt}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 320px, (min-width: 640px) 45vw, 90vw"
+                />
+              </div>
+            </div>
             <div className="relative flex flex-col gap-2">
               <p className="text-[11px] font-semibold tracking-[0.3em] text-muted-foreground uppercase">
                 Featured itinerary
@@ -64,7 +76,7 @@ export default function ItineraryGrid() {
               </div>
             </dl>
             <ul className="relative flex list-disc flex-col gap-2 pl-4 text-sm text-muted-foreground">
-              {itinerary.highlights.map((highlight) => (
+              {itinerary.highlights.slice(0, 3).map((highlight) => (
                 <li key={highlight}>{highlight}</li>
               ))}
             </ul>
