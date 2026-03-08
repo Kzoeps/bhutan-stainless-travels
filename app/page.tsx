@@ -3,11 +3,17 @@ import CulturalHighlights from "@/components/travel/cultural-highlights"
 import ItineraryGrid from "@/components/travel/itinerary-grid"
 import PlanningEssentials from "@/components/travel/planning-essentials"
 import TrustBand from "@/components/travel/trust-band"
+import PageFooter from "@/components/travel/page-footer"
+import TopNav from "@/components/travel/top-nav"
 import { practicalFacts, testimonials } from "@/lib/bhutan-travel-content"
 
 export default function Page() {
   return (
-    <main className="min-h-svh bg-background text-foreground">
+    <main
+      id="top"
+      className="motion-root min-h-svh bg-background text-foreground"
+    >
+      <TopNav />
       <HeroSection />
 
       <ItineraryGrid />
@@ -39,6 +45,8 @@ export default function Page() {
       <PlanningEssentials />
 
       <TrustBand testimonials={testimonials} />
+
+      <PageFooter />
     </main>
   )
 }
