@@ -1,10 +1,10 @@
 import {
   heroContent,
-  itineraries,
   practicalFacts,
   testimonials,
 } from "@/lib/bhutan-travel-content"
 import CulturalHighlights from "@/components/travel/cultural-highlights"
+import ItineraryGrid from "@/components/travel/itinerary-grid"
 
 export default function Page() {
   return (
@@ -54,47 +54,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section
-        id="itineraries"
-        className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-12"
-      >
-        <div className="flex flex-col gap-2">
-          <p className="text-xs tracking-[0.2em] text-muted-foreground uppercase">
-            Featured journeys
-          </p>
-          <h2 className="text-3xl font-semibold">Signature itineraries</h2>
-          <p className="max-w-2xl text-sm text-muted-foreground">
-            Each itinerary is fully customizable, balancing sacred sites, scenic
-            drives, and time with local families.
-          </p>
-        </div>
-        <div className="grid gap-6 lg:grid-cols-3">
-          {itineraries.map((itinerary) => (
-            <article
-              key={itinerary.id}
-              className="flex h-full flex-col gap-4 rounded-3xl border border-border/60 bg-card p-6"
-            >
-              <div className="flex flex-col gap-2">
-                <h3 className="text-xl font-semibold">{itinerary.name}</h3>
-                <p className="text-sm text-muted-foreground">
-                  {itinerary.duration} • {itinerary.difficulty} • Starts in{" "}
-                  {itinerary.startingCity}
-                </p>
-              </div>
-              <ul className="flex flex-col gap-2 text-sm text-muted-foreground">
-                {itinerary.highlights.map((highlight) => (
-                  <li key={highlight}>{highlight}</li>
-                ))}
-              </ul>
-              <div className="mt-auto">
-                <button className="rounded-full border border-border px-4 py-2 text-xs font-semibold tracking-[0.2em] uppercase">
-                  {itinerary.ctaLabel}
-                </button>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
+      <ItineraryGrid />
 
       <CulturalHighlights />
 
