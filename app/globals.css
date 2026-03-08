@@ -149,6 +149,45 @@
     box-shadow: 0 24px 60px -40px
       color-mix(in oklab, var(--bhutan-ink) 60%, transparent);
   }
+
+  .hero-sunrise {
+    background-color: var(--bhutan-cream);
+    background-image:
+      radial-gradient(
+        circle at 15% 20%,
+        color-mix(in oklab, var(--bhutan-saffron) 35%, transparent) 0%,
+        transparent 55%
+      ),
+      radial-gradient(
+        circle at 80% 0%,
+        color-mix(in oklab, var(--bhutan-jade) 30%, transparent) 0%,
+        transparent 60%
+      ),
+      linear-gradient(
+        135deg,
+        color-mix(in oklab, var(--bhutan-cream) 85%, white) 0%,
+        color-mix(in oklab, var(--bhutan-terracotta) 18%, transparent) 45%,
+        transparent 100%
+      );
+  }
+
+  .hero-sunrise::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(
+      120deg,
+      color-mix(in oklab, var(--bhutan-ink) 8%, transparent) 0%,
+      transparent 55%,
+      color-mix(in oklab, var(--bhutan-ink) 10%, transparent) 100%
+    );
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  .lead-strip {
+    backdrop-filter: blur(8px);
+  }
 }
 
 @layer base {
