@@ -67,8 +67,6 @@ export function HeroSection() {
           <figure
             className="reveal motif-frame relative flex h-full min-h-[280px] flex-col justify-between gap-6 rounded-[var(--bhutan-radius-card)] p-6 text-[color:var(--bhutan-ink)] sm:min-h-[340px]"
             style={{ "--reveal-delay": 4 } as CSSProperties}
-            role="img"
-            aria-label={heroContent.imageAlt}
           >
             <div className="flex flex-col gap-3">
               <span className="text-xs tracking-[0.3em] uppercase">
