@@ -1,10 +1,10 @@
 import {
-  culturalHighlights,
   heroContent,
   itineraries,
   practicalFacts,
   testimonials,
 } from "@/lib/bhutan-travel-content"
+import CulturalHighlights from "@/components/travel/cultural-highlights"
 
 export default function Page() {
   return (
@@ -96,32 +96,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-12">
-        <div className="flex flex-col gap-2">
-          <p className="text-xs tracking-[0.2em] text-muted-foreground uppercase">
-            Cultural immersion
-          </p>
-          <h2 className="text-3xl font-semibold">
-            Highlights of Bhutanese life
-          </h2>
-        </div>
-        <div className="grid gap-6 md:grid-cols-2">
-          {culturalHighlights.map((highlight) => (
-            <article
-              key={highlight.id}
-              className="flex h-full flex-col gap-3 rounded-3xl border border-border/60 bg-card p-6"
-            >
-              <h3 className="text-lg font-semibold">{highlight.title}</h3>
-              <p className="text-sm text-muted-foreground">
-                {highlight.description}
-              </p>
-              <p className="text-xs tracking-[0.2em] text-muted-foreground uppercase">
-                {highlight.meta}
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
+      <CulturalHighlights />
 
       <section className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-12">
         <div className="flex flex-col gap-2">
