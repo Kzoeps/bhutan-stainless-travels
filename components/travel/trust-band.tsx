@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 import type { Testimonial } from "@/lib/bhutan-travel-content"
 
 type TrustBandProps = {
@@ -38,10 +40,8 @@ export default function TrustBand({ testimonials }: TrustBandProps) {
           Traveler trust
         </p>
         <h2 className="text-3xl font-semibold">Grounded stories, local care</h2>
-        <p className="max-w-2xl text-sm text-muted-foreground">
-          Our Bhutan team is based between Paro and Thimphu, pairing every
-          journey with in-country support, vetted homestays, and guides who know
-          the valleys by heart.
+        <p className="max-w-xl text-sm text-muted-foreground">
+          Local support, trusted homestays, and calm guidance throughout.
         </p>
       </div>
 
@@ -51,9 +51,20 @@ export default function TrustBand({ testimonials }: TrustBandProps) {
             key={testimonial.id}
             className="flex h-full flex-col justify-between gap-4 rounded-3xl border border-border/60 bg-card p-6"
           >
-            <blockquote className="text-sm text-muted-foreground">
-              “{testimonial.quote}”
-            </blockquote>
+            <div className="flex items-start gap-4">
+              <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full">
+                <Image
+                  src={testimonial.imageSrc}
+                  alt={testimonial.imageAlt}
+                  fill
+                  sizes="56px"
+                  className="object-cover"
+                />
+              </div>
+              <blockquote className="text-sm text-muted-foreground">
+                “{testimonial.quote}”
+              </blockquote>
+            </div>
             <figcaption className="text-xs tracking-[0.2em] text-muted-foreground uppercase">
               {testimonial.name} • {testimonial.country}
             </figcaption>

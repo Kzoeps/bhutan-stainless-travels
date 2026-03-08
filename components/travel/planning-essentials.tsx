@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 import { practicalFacts } from "@/lib/bhutan-travel-content"
 
 export default function PlanningEssentials() {
@@ -11,21 +13,33 @@ export default function PlanningEssentials() {
           Planning essentials
         </p>
         <h2 className="text-3xl font-semibold">
-          Practical guidance before you go
+          Practical guidance, distilled
         </h2>
-        <p className="max-w-2xl text-sm text-muted-foreground">
-          A clear, shared checklist makes the journey feel effortless. We use
-          the notes below to shape your itinerary and prep calls.
+        <p className="max-w-xl text-sm text-muted-foreground">
+          A quick brief on visas, timing, altitude, and low-impact travel.
         </p>
       </div>
       <div className="grid gap-6 md:grid-cols-2">
         {practicalFacts.map((topic) => (
           <article
             key={topic.id}
-            className="flex h-full flex-col gap-3 rounded-3xl border border-border/60 bg-card p-6"
+            className="flex h-full flex-col gap-4 rounded-3xl border border-border/60 bg-card p-5"
           >
-            <h3 className="text-lg font-semibold">{topic.title}</h3>
-            <p className="text-sm text-muted-foreground">{topic.description}</p>
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl">
+              <Image
+                src={topic.imageSrc}
+                alt={topic.imageAlt}
+                fill
+                sizes="(min-width: 768px) 320px, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <div className="flex flex-col gap-2">
+              <h3 className="text-lg font-semibold">{topic.title}</h3>
+              <p className="text-xs text-muted-foreground">
+                {topic.description}
+              </p>
+            </div>
           </article>
         ))}
       </div>
