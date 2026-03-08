@@ -1,29 +1,4 @@
-const planningTopics = [
-  {
-    title: "Visa and permits",
-    icon: "V",
-    description:
-      "Entry clearance and guide arrangements are coordinated in advance. Share passport details early so timing stays smooth.",
-  },
-  {
-    title: "Best travel windows",
-    icon: "W",
-    description:
-      "Spring and autumn bring clear skies and festivals, while summer is greener and quieter. We match pacing to seasonal light.",
-  },
-  {
-    title: "Altitude readiness",
-    icon: "A",
-    description:
-      "Most valleys sit above 2,000 meters. We build acclimatization days and adjust hikes to keep energy steady.",
-  },
-  {
-    title: "Sustainability expectations",
-    icon: "S",
-    description:
-      "Bhutan prioritizes low-impact travel. Expect small groups, mindful waste practices, and respect for sacred sites.",
-  },
-]
+import { practicalFacts } from "@/lib/bhutan-travel-content"
 
 export default function PlanningEssentials() {
   return (
@@ -44,17 +19,12 @@ export default function PlanningEssentials() {
         </p>
       </div>
       <div className="grid gap-6 md:grid-cols-2">
-        {planningTopics.map((topic) => (
+        {practicalFacts.map((topic) => (
           <article
-            key={topic.title}
+            key={topic.id}
             className="flex h-full flex-col gap-3 rounded-3xl border border-border/60 bg-card p-6"
           >
-            <div className="flex items-center gap-3">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-xs font-semibold text-muted-foreground">
-                {topic.icon}
-              </span>
-              <h3 className="text-lg font-semibold">{topic.title}</h3>
-            </div>
+            <h3 className="text-lg font-semibold">{topic.title}</h3>
             <p className="text-sm text-muted-foreground">{topic.description}</p>
           </article>
         ))}
