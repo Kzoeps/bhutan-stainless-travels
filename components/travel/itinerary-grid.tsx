@@ -1,3 +1,5 @@
+import type { CSSProperties } from "react"
+
 import { itineraries } from "@/lib/bhutan-travel-content"
 
 export default function ItineraryGrid() {
@@ -6,7 +8,10 @@ export default function ItineraryGrid() {
       id="itineraries"
       className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-12"
     >
-      <div className="flex flex-col gap-2">
+      <div
+        className="reveal flex flex-col gap-2"
+        style={{ "--reveal-delay": 1 } as CSSProperties}
+      >
         <p className="text-xs tracking-[0.2em] text-muted-foreground uppercase">
           Featured journeys
         </p>
@@ -17,10 +22,11 @@ export default function ItineraryGrid() {
         </p>
       </div>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {itineraries.map((itinerary) => (
+        {itineraries.map((itinerary, index) => (
           <article
             key={itinerary.id}
-            className="group relative flex h-full flex-col gap-5 overflow-hidden rounded-[30px] border border-border/60 bg-card/85 p-6 shadow-[0_26px_70px_-54px_rgba(15,23,42,0.55)]"
+            className="reveal group relative flex h-full flex-col gap-5 overflow-hidden rounded-[30px] border border-border/60 bg-card/85 p-6 shadow-[0_26px_70px_-54px_rgba(15,23,42,0.55)]"
+            style={{ "--reveal-delay": index + 2 } as CSSProperties}
           >
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(148,163,184,0.18),_transparent_55%)] opacity-0 transition duration-300 group-hover:opacity-100" />
             <div className="relative flex flex-col gap-2">
@@ -64,7 +70,7 @@ export default function ItineraryGrid() {
             </ul>
             <button
               type="button"
-              className="relative mt-auto inline-flex items-center justify-center rounded-full bg-primary px-5 py-2 text-xs font-semibold tracking-[0.2em] text-primary-foreground uppercase transition hover:opacity-90"
+              className="interactive-lift relative mt-auto inline-flex items-center justify-center rounded-full bg-primary px-5 py-2 text-xs font-semibold tracking-[0.2em] text-primary-foreground uppercase"
             >
               {itinerary.ctaLabel}
             </button>

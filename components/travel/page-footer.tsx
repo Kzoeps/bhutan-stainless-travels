@@ -49,7 +49,7 @@ export default function PageFooter() {
               map the same week.
             </p>
             <a
-              className="mt-auto inline-flex items-center justify-center rounded-full bg-[color:var(--bhutan-terracotta)] px-5 py-3 text-xs font-semibold tracking-[0.2em] text-white uppercase transition hover:opacity-90"
+              className="interactive-lift mt-auto inline-flex items-center justify-center rounded-full bg-[color:var(--bhutan-terracotta)] px-5 py-3 text-xs font-semibold tracking-[0.2em] text-white uppercase"
               href="mailto:journeys@drukpath.bt?subject=Bhutan%20Journey%20Planning"
             >
               Request a booking call
