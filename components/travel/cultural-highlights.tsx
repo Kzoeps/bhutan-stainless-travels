@@ -1,5 +1,7 @@
 import type { CSSProperties } from "react"
 
+import Image from "next/image"
+
 import { culturalHighlights } from "@/lib/bhutan-travel-content"
 
 export default function CulturalHighlights() {
@@ -26,29 +28,40 @@ export default function CulturalHighlights() {
         </div>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {culturalHighlights.map((highlight, index) => (
           <article
             key={highlight.id}
-            className="reveal group relative flex h-full flex-col gap-4 overflow-hidden rounded-[28px] border border-border/60 bg-card/80 p-6 shadow-[0_20px_60px_-50px_rgba(15,23,42,0.45)]"
+            className="reveal group relative flex h-full flex-col overflow-hidden rounded-[26px] border border-border/60 bg-card/85 shadow-[0_20px_60px_-50px_rgba(15,23,42,0.45)]"
             style={{ "--reveal-delay": index + 2 } as CSSProperties}
           >
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(148,163,184,0.16),_transparent_55%)] opacity-0 transition duration-300 group-hover:opacity-100" />
-            <div className="relative flex flex-col gap-3">
-              <div className="flex items-center justify-between text-[11px] font-semibold tracking-[0.32em] text-muted-foreground uppercase">
-                <span>Experience</span>
+            <div className="relative overflow-hidden">
+              <div className="relative h-40 w-full">
+                <Image
+                  src={highlight.imageSrc}
+                  alt={highlight.imageAlt}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 220px, (min-width: 768px) 45vw, 90vw"
+                />
+              </div>
+            </div>
+            <div className="relative flex flex-1 flex-col gap-2 p-5">
+              <div className="flex items-center justify-between text-[10px] font-semibold tracking-[0.32em] text-muted-foreground uppercase">
+                <span>Highlight</span>
                 <span>{String(index + 1).padStart(2, "0")}</span>
               </div>
-              <h3 className="text-lg font-semibold text-foreground">
+              <h3 className="text-base font-semibold text-foreground">
                 {highlight.title}
               </h3>
+              <p className="text-[11px] tracking-[0.28em] text-muted-foreground uppercase">
+                {highlight.meta}
+              </p>
               <p className="text-sm text-muted-foreground">
                 {highlight.description}
               </p>
             </div>
-            <p className="mt-auto text-xs tracking-[0.2em] text-muted-foreground uppercase">
-              {highlight.meta}
-            </p>
           </article>
         ))}
       </div>
@@ -60,8 +73,7 @@ export default function CulturalHighlights() {
         <span className="font-semibold text-foreground">
           Responsible travel note:
         </span>{" "}
-        Visits are planned with local consent and fair compensation, and we
-        prioritize spaces where hosts are comfortable sharing their traditions.
+        Visits are coordinated with host consent and fair compensation.
       </div>
     </section>
   )
