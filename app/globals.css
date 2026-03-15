@@ -260,6 +260,14 @@
     color: color-mix(in oklab, var(--pathfinder-cream) 45%, transparent);
   }
 
+  .text-cream\/50 {
+    color: color-mix(in oklab, var(--pathfinder-cream) 50%, transparent);
+  }
+
+  .text-cream\/40 {
+    color: color-mix(in oklab, var(--pathfinder-cream) 40%, transparent);
+  }
+
   .text-ink {
     color: var(--pathfinder-ink);
   }
@@ -493,7 +501,8 @@
   }
 
   .interactive-lift:focus-visible {
-    outline: 2px solid color-mix(in oklab, var(--bhutan-terracotta) 55%, white);
+    outline: 2px solid
+      color-mix(in oklab, var(--pathfinder-gold) 80%, var(--pathfinder-ink));
     outline-offset: 3px;
   }
 
