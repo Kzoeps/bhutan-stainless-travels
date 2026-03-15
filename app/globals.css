@@ -47,6 +47,16 @@
   --bhutan-space-gutter: 1.5rem;
   --bhutan-radius-card: 1.5rem;
   --bhutan-radius-pill: 999px;
+  --pathfinder-gold: var(--bhutan-saffron);
+  --pathfinder-maroon: var(--bhutan-terracotta);
+  --pathfinder-cream: var(--bhutan-cream);
+  --pathfinder-ink: var(--bhutan-ink);
+  --pathfinder-slate: var(--bhutan-slate);
+  --pathfinder-font-display: var(--font-display);
+  --pathfinder-font-body: var(--font-sans);
+  --pathfinder-section-space: var(--bhutan-space-section);
+  --pathfinder-gutter: var(--bhutan-space-gutter);
+  --pathfinder-card-radius: var(--bhutan-radius-card);
 }
 
 .dark {
@@ -126,6 +136,99 @@
 }
 
 @layer utilities {
+  .bhutan-section {
+    padding: var(--pathfinder-section-space) var(--pathfinder-gutter);
+  }
+
+  @media (min-width: 768px) {
+    .bhutan-section {
+      padding: calc(var(--pathfinder-section-space) + 1rem)
+        calc(var(--pathfinder-gutter) * 1.4);
+    }
+  }
+
+  .bhutan-card {
+    border-radius: var(--pathfinder-card-radius);
+    border: 1px solid
+      color-mix(in oklab, var(--pathfinder-ink) 12%, transparent);
+    background: linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--pathfinder-cream) 92%, white) 0%,
+      color-mix(in oklab, var(--pathfinder-cream) 75%, var(--pathfinder-slate))
+        100%
+    );
+    box-shadow:
+      0 20px 45px -35px
+        color-mix(in oklab, var(--pathfinder-ink) 65%, transparent),
+      0 1px 0 0 color-mix(in oklab, var(--pathfinder-cream) 55%, transparent);
+  }
+
+  .bhutan-divider {
+    height: 2px;
+    width: 5rem;
+    background-image: linear-gradient(
+      90deg,
+      var(--pathfinder-gold) 0%,
+      var(--pathfinder-maroon) 100%
+    );
+  }
+
+  .bg-cream-dark {
+    background-color: color-mix(
+      in oklab,
+      var(--pathfinder-cream) 75%,
+      var(--pathfinder-ink)
+    );
+  }
+
+  .bg-gold {
+    background-color: var(--pathfinder-gold);
+  }
+
+  .bg-maroon {
+    background-color: var(--pathfinder-maroon);
+  }
+
+  .bg-cream {
+    background-color: var(--pathfinder-cream);
+  }
+
+  .text-gold {
+    color: var(--pathfinder-gold);
+  }
+
+  .text-maroon {
+    color: var(--pathfinder-maroon);
+  }
+
+  .text-cream {
+    color: var(--pathfinder-cream);
+  }
+
+  .text-ink {
+    color: var(--pathfinder-ink);
+  }
+
+  .text-slate {
+    color: var(--pathfinder-slate);
+  }
+
+  .font-pathfinder-display {
+    font-family: var(--pathfinder-font-display);
+  }
+
+  .font-pathfinder-body {
+    font-family: var(--pathfinder-font-body);
+  }
+
+  .fade-in {
+    animation: pathfinder-fade-in 700ms ease-out both;
+  }
+
+  .fade-up {
+    animation: pathfinder-fade-up 700ms ease-out both;
+  }
+
   .motif-frame {
     background-image:
       linear-gradient(
@@ -301,6 +404,26 @@
   .interactive-lift:focus-visible {
     outline: 2px solid color-mix(in oklab, var(--bhutan-terracotta) 55%, white);
     outline-offset: 3px;
+  }
+}
+
+@keyframes pathfinder-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pathfinder-fade-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
 
