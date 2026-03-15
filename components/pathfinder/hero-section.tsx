@@ -13,7 +13,7 @@ const HeroSection = () => {
           src="/pathfinder/hero-bhutan.jpg"
         />
       </div>
-      <div className="bg-maroon absolute inset-0 opacity-50" />
+      <div className="bg-maroon-deep/50 absolute inset-0" />
       <div className="absolute right-0 bottom-0 left-0 h-32 bg-gradient-to-t from-background to-transparent" />
 
       <div className="fade-up relative z-10 mx-auto max-w-3xl px-6 text-center">
