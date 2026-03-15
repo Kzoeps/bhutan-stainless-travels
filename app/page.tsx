@@ -1,11 +1,10 @@
-import { HeroSection } from "@/components/travel/hero-section"
-import CulturalHighlights from "@/components/travel/cultural-highlights"
-import ItineraryGrid from "@/components/travel/itinerary-grid"
-import PlanningEssentials from "@/components/travel/planning-essentials"
-import TrustBand from "@/components/travel/trust-band"
-import PageFooter from "@/components/travel/page-footer"
-import TopNav from "@/components/travel/top-nav"
-import { testimonials } from "@/lib/bhutan-travel-content"
+import AboutSection from "@/components/pathfinder/about-section"
+import ContactSection from "@/components/pathfinder/contact-section"
+import DestinationsSection from "@/components/pathfinder/destinations-section"
+import Footer from "@/components/pathfinder/footer"
+import HeroSection from "@/components/pathfinder/hero-section"
+import Navbar from "@/components/pathfinder/navbar"
+import PackagesSection from "@/components/pathfinder/packages-section"
 
 export default function Page() {
   return (
@@ -13,18 +12,13 @@ export default function Page() {
       id="top"
       className="motion-root min-h-svh bg-background text-foreground"
     >
-      <TopNav />
+      <Navbar />
       <HeroSection />
-
-      <ItineraryGrid />
-
-      <CulturalHighlights />
-
-      <PlanningEssentials />
-
-      <TrustBand testimonials={testimonials} />
-
-      <PageFooter />
+      <DestinationsSection />
+      <PackagesSection />
+      <AboutSection />
+      <ContactSection />
+      <Footer />
     </main>
   )
 }
