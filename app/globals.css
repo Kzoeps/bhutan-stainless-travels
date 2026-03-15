@@ -578,8 +578,8 @@
 
   /* Destinations sticky scroll-stack */
   .destinations-stack {
-    --panel-h: min(78vh, 620px);
-    --gap: 38vh;
+    --panel-h: calc(100vh - 9rem);
+    --gap: 40vh;
   }
 
   .destination-panel-overlay {
@@ -589,6 +589,17 @@
       rgba(0, 0, 0, 0.22) 45%,
       transparent 100%
     );
+  }
+
+  /* Deeper shadow on stacked cards so layers read as physical depth */
+  .destinations-stack .bhutan-card {
+    box-shadow:
+      0 -4px 0 0 color-mix(in oklab, var(--pathfinder-cream) 60%, transparent),
+      0 0 0 1px color-mix(in oklab, var(--pathfinder-ink) 10%, transparent),
+      0 32px 64px -20px
+        color-mix(in oklab, var(--pathfinder-ink) 55%, transparent),
+      0 8px 24px -8px
+        color-mix(in oklab, var(--pathfinder-ink) 25%, transparent);
   }
 
   /* Reduced-motion: flat vertical stack, no sticky */
