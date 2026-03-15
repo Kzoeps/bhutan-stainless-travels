@@ -235,11 +235,11 @@
   }
 
   .text-cream\/50 {
-    color: color-mix(in oklab, var(--pathfinder-cream) 50%, transparent);
+    color: color-mix(in oklab, var(--pathfinder-cream) 55%, transparent);
   }
 
   .text-cream\/40 {
-    color: color-mix(in oklab, var(--pathfinder-cream) 40%, transparent);
+    color: color-mix(in oklab, var(--pathfinder-cream) 45%, transparent);
   }
 
   .text-ink {
