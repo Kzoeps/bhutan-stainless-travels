@@ -111,11 +111,11 @@ const PackagesSection = () => {
                     <span className="font-display text-3xl text-foreground md:text-4xl">
                       {pkg.price}
                     </span>
-                    <span className="font-body text-xs text-muted-foreground">
+                    <span className="font-body text-slate text-xs">
                       {pkg.priceNote}
                     </span>
                   </div>
-                  <p className="font-body mt-3 text-sm text-muted-foreground">
+                  <p className="font-body text-slate mt-3 text-sm">
                     {pkg.duration}
                   </p>
 
@@ -123,7 +123,7 @@ const PackagesSection = () => {
                     {pkg.highlights.map((highlight) => (
                       <li
                         key={highlight}
-                        className="font-body flex items-start gap-2.5 text-sm text-muted-foreground"
+                        className="font-body text-slate flex items-start gap-2.5 text-sm"
                       >
                         <span className="text-gold mt-0.5 text-xs">●</span>
                         {highlight}
@@ -147,7 +147,7 @@ const PackagesSection = () => {
           })}
         </div>
 
-        <p className="font-body mt-8 text-center text-sm text-muted-foreground">
+        <p className="font-body text-slate mt-8 text-center text-sm">
           All trips include a licensed guide, accommodation, meals, and the
           Sustainable Development Fee.
         </p>
