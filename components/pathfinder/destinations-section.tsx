@@ -48,40 +48,47 @@ const DestinationsSection = () => {
           />
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
-          {destinations.map((destination) => (
-            <div
-              key={destination.title}
-              className="destination-panel bhutan-card group"
-            >
-              <div className="destination-panel-shell relative h-64 overflow-hidden">
-                <Image
-                  src={destination.image}
-                  alt={destination.title}
-                  fill
-                  sizes="(min-width: 1024px) 320px, (min-width: 768px) 30vw, 90vw"
-                  className="destination-panel-image object-cover transition-transform duration-500 group-focus-within:scale-105 group-hover:scale-105"
-                />
-                <div
-                  className="destination-panel-overlay pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-focus-within:opacity-100 group-hover:opacity-100"
-                  aria-hidden="true"
-                />
-              </div>
-              <div className="destination-panel-legibility bg-card p-5">
-                <div className="destination-panel-content">
-                  <p className="font-body text-gold mb-1 text-xs font-medium tracking-wide uppercase">
-                    {destination.subtitle}
-                  </p>
-                  <h3 className="font-display mb-2 text-xl text-card-foreground">
-                    {destination.title}
-                  </h3>
-                  <p className="font-body text-sm leading-relaxed text-muted-foreground">
-                    {destination.description}
-                  </p>
+        <div className="flex flex-col gap-8">
+          {destinations.map((destination, index) => {
+            const alignment =
+              index % 2 === 0 ? "items-start text-left" : "items-end text-right"
+
+            return (
+              <div
+                key={destination.title}
+                className="destination-panel bhutan-card group"
+              >
+                <div className="destination-panel-shell relative min-h-[22rem] overflow-hidden md:min-h-[28rem]">
+                  <Image
+                    src={destination.image}
+                    alt={destination.title}
+                    fill
+                    sizes="(min-width: 1024px) 900px, (min-width: 768px) 85vw, 95vw"
+                    className="destination-panel-image object-cover transition-transform duration-500 group-focus-within:scale-105 group-hover:scale-105"
+                  />
+                  <div
+                    className="destination-panel-overlay pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-focus-within:opacity-100 group-hover:opacity-100"
+                    aria-hidden="true"
+                  />
+                  <div
+                    className={`destination-panel-legibility absolute inset-0 flex flex-col justify-end p-6 md:p-10 ${alignment}`}
+                  >
+                    <div className="destination-panel-content max-w-md text-balance">
+                      <p className="font-body text-gold mb-2 text-xs font-medium tracking-wide uppercase">
+                        {destination.subtitle}
+                      </p>
+                      <h3 className="font-display mb-3 text-2xl text-white md:text-3xl">
+                        {destination.title}
+                      </h3>
+                      <p className="font-body text-sm leading-relaxed text-white/90 md:text-base">
+                        {destination.description}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>
