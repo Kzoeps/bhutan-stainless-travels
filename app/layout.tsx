@@ -1,29 +1,30 @@
 import type { Metadata } from "next"
-import { Cormorant_Garamond, Lora } from "next/font/google"
+import { DM_Sans, DM_Serif_Display } from "next/font/google"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
 
-const bodyFont = Lora({
+const bodyFont = DM_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
-})
-
-const displayFont = Cormorant_Garamond({
-  subsets: ["latin"],
-  variable: "--font-display",
   weight: ["400", "500", "600", "700"],
 })
 
+const displayFont = DM_Serif_Display({
+  subsets: ["latin"],
+  variable: "--font-display",
+  weight: ["400"],
+})
+
 export const metadata: Metadata = {
-  title: "Druk Path Journeys | Bhutan Travel Design Studio",
+  title: "Dragon Pathfinder | Bhutan Adventure Travel",
   description:
-    "Design a custom Bhutan journey with local guides, sacred valley stays, and careful pacing across Paro, Punakha, and Bumthang.",
+    "Plan a Dragon Pathfinder journey through Bhutan with curated routes, cultural guides, and Himalayan landscapes from Paro to Bumthang.",
   openGraph: {
-    title: "Druk Path Journeys | Bhutan Travel Design Studio",
+    title: "Dragon Pathfinder | Bhutan Adventure Travel",
     description:
-      "Design a custom Bhutan journey with local guides, sacred valley stays, and careful pacing across Paro, Punakha, and Bumthang.",
+      "Plan a Dragon Pathfinder journey through Bhutan with curated routes, cultural guides, and Himalayan landscapes from Paro to Bumthang.",
     type: "website",
   },
 }
