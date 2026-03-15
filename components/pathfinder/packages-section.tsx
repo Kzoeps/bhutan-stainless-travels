@@ -89,33 +89,33 @@ const PackagesSection = () => {
                 }`}
               >
                 {pkg.featured && (
-                  <div className="font-body border-gold/30 bg-cream/80 text-maroon flex items-center justify-center border-b px-6 py-3 text-[11px] font-semibold tracking-[0.26em] uppercase">
+                  <div className="font-body border-gold/30 bg-cream/80 text-maroon flex items-center justify-center border-b px-5 py-3 text-[10px] font-semibold tracking-[0.26em] uppercase sm:px-6 sm:text-[11px]">
                     Featured journey
                   </div>
                 )}
-                <div className="flex flex-1 flex-col bg-card p-7">
+                <div className="flex flex-1 flex-col bg-card p-6 sm:p-7">
                   <div className="mb-4 flex items-center justify-between">
-                    <span className="font-display text-gold/70 text-2xl tracking-[0.32em] md:text-3xl">
+                    <span className="font-display text-gold/70 text-xl tracking-[0.28em] sm:text-2xl md:text-3xl">
                       {marker}
                     </span>
                     {pkg.featured && (
-                      <span className="font-body border-gold/40 bg-cream/80 text-maroon rounded-full border px-3 py-1 text-[10px] font-semibold tracking-[0.2em] uppercase">
+                      <span className="font-body border-gold/40 bg-cream/80 text-maroon rounded-full border px-3 py-1 text-[9px] font-semibold tracking-[0.2em] uppercase sm:text-[10px]">
                         Signature
                       </span>
                     )}
                   </div>
-                  <h3 className="font-display text-2xl text-card-foreground">
+                  <h3 className="font-display text-xl text-card-foreground sm:text-2xl">
                     {pkg.title}
                   </h3>
                   <div className="mt-3 flex flex-wrap items-baseline gap-2">
-                    <span className="font-display text-3xl text-foreground md:text-4xl">
+                    <span className="font-display text-2xl text-foreground sm:text-3xl md:text-4xl">
                       {pkg.price}
                     </span>
-                    <span className="font-body text-slate text-xs">
+                    <span className="font-body text-slate text-[11px] sm:text-xs">
                       {pkg.priceNote}
                     </span>
                   </div>
-                  <p className="font-body text-slate mt-3 text-sm">
+                  <p className="font-body text-slate mt-3 text-xs sm:text-sm">
                     {pkg.duration}
                   </p>
 
@@ -123,7 +123,7 @@ const PackagesSection = () => {
                     {pkg.highlights.map((highlight) => (
                       <li
                         key={highlight}
-                        className="font-body text-slate flex items-start gap-2.5 text-sm"
+                        className="font-body text-slate flex items-start gap-2.5 text-xs sm:text-sm"
                       >
                         <span className="text-gold mt-0.5 text-xs">●</span>
                         {highlight}
@@ -133,7 +133,7 @@ const PackagesSection = () => {
 
                   <a
                     href="#contact"
-                    className={`font-body block rounded-lg py-3 text-center text-sm font-medium tracking-wide transition-all duration-300 ${
+                    className={`font-body block rounded-lg py-3.5 text-center text-sm font-medium tracking-wide transition-all duration-300 ${
                       pkg.featured
                         ? "hover:bg-gold bg-maroon text-cream hover:text-foreground"
                         : "border-maroon text-maroon hover:bg-maroon hover:text-cream border"
