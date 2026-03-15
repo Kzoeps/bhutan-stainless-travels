@@ -1,9 +1,7 @@
-import { Compass, Crown, Mountain } from "lucide-react"
 import * as React from "react"
 
 const packages = [
   {
-    icon: Compass,
     title: "Essential Bhutan",
     duration: "5 Days / 4 Nights",
     price: "$250",
@@ -16,7 +14,6 @@ const packages = [
     ],
   },
   {
-    icon: Mountain,
     title: "Kingdom Explorer",
     duration: "8 Days / 7 Nights",
     price: "$250",
@@ -31,7 +28,6 @@ const packages = [
     featured: true,
   },
   {
-    icon: Crown,
     title: "Royal Heritage",
     duration: "12 Days / 11 Nights",
     price: "$350",
@@ -74,9 +70,8 @@ const PackagesSection = () => {
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
-          {packages.map((pkg) => {
-            const Icon = pkg.icon
-
+          {packages.map((pkg, index) => {
+            const marker = String(index + 1).padStart(2, "0")
             return (
               <div
                 key={pkg.title}
@@ -90,11 +85,9 @@ const PackagesSection = () => {
                   </div>
                 )}
                 <div className="flex flex-1 flex-col bg-card p-6">
-                  <Icon
-                    className="text-gold mb-3"
-                    size={28}
-                    strokeWidth={1.5}
-                  />
+                  <span className="font-display text-gold/80 mb-4 text-3xl tracking-[0.2em] md:text-4xl">
+                    {marker}
+                  </span>
                   <h3 className="font-display mb-1 text-xl text-card-foreground">
                     {pkg.title}
                   </h3>
