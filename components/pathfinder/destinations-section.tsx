@@ -31,7 +31,7 @@ const DestinationsSection = () => {
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-14 text-center">
           <p
-            className="reveal font-body text-gold mb-2 text-sm font-medium tracking-wide uppercase"
+            className="reveal font-body text-gold eyebrow-compact mb-2"
             style={{ "--reveal-delay": "0" } as React.CSSProperties}
           >
             Places we love
@@ -58,7 +58,7 @@ const DestinationsSection = () => {
                 key={destination.title}
                 className="destination-panel bhutan-card group"
               >
-                <div className="destination-panel-shell relative min-h-[20rem] overflow-hidden sm:min-h-[24rem] md:min-h-[28rem]">
+                <div className="destination-panel-shell relative min-h-[20rem] overflow-hidden rounded-[var(--pathfinder-card-radius)] sm:min-h-[24rem] md:min-h-[28rem]">
                   <Image
                     src={destination.image}
                     alt={destination.title}
@@ -71,10 +71,10 @@ const DestinationsSection = () => {
                     aria-hidden="true"
                   />
                   <div
-                    className={`destination-panel-legibility absolute inset-0 flex flex-col justify-end gap-2 p-5 sm:p-7 md:p-10 ${alignment}`}
+                    className={`destination-panel-legibility absolute inset-0 flex flex-col justify-end gap-3 p-6 sm:p-8 md:p-11 ${alignment}`}
                   >
-                    <div className="destination-panel-content max-w-xs text-balance sm:max-w-md">
-                      <p className="font-body text-gold text-[11px] font-medium tracking-wide uppercase sm:text-xs">
+                    <div className="destination-panel-content max-w-sm text-balance sm:max-w-lg">
+                      <p className="font-body eyebrow-compact text-gold">
                         {destination.subtitle}
                       </p>
                       <h3 className="font-display mt-2 text-xl text-white sm:text-2xl md:text-3xl">
