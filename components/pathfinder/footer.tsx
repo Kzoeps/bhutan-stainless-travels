@@ -6,11 +6,11 @@ const Footer = () => {
           <p className="font-display text-cream mb-1 text-lg">
             Bhutan Stainless
           </p>
-          <p className="font-body text-cream/50 mb-4 text-sm">
+          <p className="font-body text-cream/55 mb-4 text-sm">
             Your friendly Bhutan travel partner since 2015
           </p>
           <div className="bhutan-divider mb-4 w-12" />
-          <p className="font-body text-cream/40 text-xs">
+          <p className="font-body text-cream/45 text-xs">
             © {new Date().getFullYear()} Bhutan Stainless. Licensed by the
             Tourism Council of Bhutan.
           </p>

@@ -63,7 +63,7 @@ const AboutSection = () => {
               <p className="font-display text-gold mb-1 text-2xl md:text-3xl">
                 {stat.value}
               </p>
-              <p className="font-body text-cream/50 text-xs font-medium tracking-wide uppercase">
+              <p className="font-body text-cream/55 text-xs font-medium tracking-wide uppercase">
                 {stat.label}
               </p>
             </div>
