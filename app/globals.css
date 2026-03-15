@@ -571,8 +571,10 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 5rem;
+    height: var(--section-seam-height, 6rem);
     pointer-events: none;
+    opacity: var(--section-seam-opacity, 1);
+    filter: blur(var(--section-seam-blur, 0px));
     z-index: 1;
   }
 
@@ -580,7 +582,8 @@
   .section-seam-top-from-bg::before {
     background: linear-gradient(
       to bottom,
-      color-mix(in oklab, var(--background) 55%, transparent) 0%,
+      color-mix(in oklab, var(--background) 70%, var(--pathfinder-cream)) 0%,
+      color-mix(in oklab, var(--background) 45%, transparent) 55%,
       transparent 100%
     );
   }
@@ -589,7 +592,13 @@
   .section-seam-top-from-cream-dark::before {
     background: linear-gradient(
       to bottom,
-      color-mix(in oklab, var(--pathfinder-cream) 28%, var(--pathfinder-ink)) 0%,
+      color-mix(
+          in oklab,
+          var(--pathfinder-cream) 38%,
+          var(--pathfinder-maroon-deep)
+        )
+        0%,
+      color-mix(in oklab, var(--pathfinder-maroon-deep) 35%, transparent) 58%,
       transparent 100%
     );
   }
