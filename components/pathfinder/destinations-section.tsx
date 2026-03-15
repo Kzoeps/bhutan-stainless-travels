@@ -3,21 +3,21 @@ import * as React from "react"
 
 const destinations = [
   {
-    image: "/pathfinder/punakha-dzong.jpg",
+    image: "/punakha.webp",
     title: "Punakha Dzong",
     subtitle: "Where two rivers meet",
     description:
       "One of Bhutan's most beautiful fortress-monasteries, surrounded by jacaranda blooms and river valleys.",
   },
   {
-    image: "/pathfinder/phobjikha-valley.jpg",
+    image: "/phobjikha.webp",
     title: "Phobjikha Valley",
     subtitle: "Home of the cranes",
     description:
       "A wide glacial valley with incredible views — and winter home to endangered black-necked cranes.",
   },
   {
-    image: "/pathfinder/bumthang.jpg",
+    image: "/bumthang.webp",
     title: "Bumthang",
     subtitle: "Bhutan's spiritual heart",
     description:

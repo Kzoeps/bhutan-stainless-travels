@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { Menu, X } from "lucide-react"
+import Image from "next/image"
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false)
@@ -30,8 +31,19 @@ const Navbar = () => {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <a href="#" className="font-display text-cream text-xl">
-          Bhutan Stainless
+        <a href="#" className="flex items-center gap-3">
+          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white p-1">
+            <Image
+              src="/stainless-travels-logo.png"
+              alt="Bhutan Stainless Travels"
+              width={56}
+              height={56}
+              className="h-full w-full object-contain"
+            />
+          </div>
+          <span className="font-display text-cream text-lg leading-tight">
+            Bhutan Stainless
+          </span>
         </a>
 
         <div className="hidden items-center gap-6 md:flex">
