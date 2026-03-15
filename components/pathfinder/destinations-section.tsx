@@ -28,8 +28,6 @@ const destinations = [
   },
 ]
 
-// Increasing top offsets so each previous card peeks as a strip behind the next
-const stickyTops = ["5rem", "7rem", "9rem"] as const
 const zLevels = ["z-[10]", "z-[20]", "z-[30]"] as const
 
 const DestinationsSection = () => {
@@ -73,7 +71,7 @@ const DestinationsSection = () => {
                 className={`bhutan-card group sticky overflow-hidden ${zLevels[index]}`}
                 style={
                   {
-                    top: stickyTops[index],
+                    top: "6rem",
                     height: "var(--panel-h)",
                   } as React.CSSProperties
                 }
