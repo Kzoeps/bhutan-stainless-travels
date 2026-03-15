@@ -576,6 +576,37 @@
     outline-offset: 3px;
   }
 
+  /* Destinations sticky scroll-stack */
+  .destinations-stack {
+    --panel-h: min(78vh, 620px);
+    --gap: 38vh;
+  }
+
+  .destination-panel-overlay {
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.68) 0%,
+      rgba(0, 0, 0, 0.22) 45%,
+      transparent 100%
+    );
+  }
+
+  /* Reduced-motion: flat vertical stack, no sticky */
+  @media (prefers-reduced-motion: reduce) {
+    .destinations-stack {
+      height: auto !important;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .destinations-stack > .bhutan-card {
+      position: relative !important;
+      top: auto !important;
+      height: var(--panel-h) !important;
+    }
+  }
+
   /* Section transition gradients — subtle feathering at section seams */
   .section-seam-top-from-bg::before,
   .section-seam-top-from-editorial::before,

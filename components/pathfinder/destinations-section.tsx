@@ -8,6 +8,7 @@ const destinations = [
     subtitle: "Where two rivers meet",
     description:
       "One of Bhutan's most beautiful fortress-monasteries, surrounded by jacaranda blooms and river valleys.",
+    align: "left" as const,
   },
   {
     image: "/phobjikha.webp",
@@ -15,6 +16,7 @@ const destinations = [
     subtitle: "Home of the cranes",
     description:
       "A wide glacial valley with incredible views — and winter home to endangered black-necked cranes.",
+    align: "right" as const,
   },
   {
     image: "/bumthang.webp",
@@ -22,13 +24,19 @@ const destinations = [
     subtitle: "Bhutan's spiritual heart",
     description:
       "Ancient temples, quiet forests, and some of the oldest Buddhist sites in the country.",
+    align: "left" as const,
   },
 ]
+
+// Increasing top offsets so each previous card peeks as a strip behind the next
+const stickyTops = ["5rem", "7rem", "9rem"] as const
+const zLevels = ["z-[10]", "z-[20]", "z-[30]"] as const
 
 const DestinationsSection = () => {
   return (
     <section id="destinations" className="bg-background py-20">
       <div className="mx-auto max-w-7xl px-6">
+        {/* Heading — normal flow, scrolls away */}
         <div className="mb-14 text-center">
           <p
             className="reveal font-body text-gold eyebrow-compact mb-2"
@@ -43,41 +51,58 @@ const DestinationsSection = () => {
             Where would you like to go?
           </h2>
           <div
-            className="reveal bhutan-divider mt-4 w-20"
+            className="reveal bhutan-divider mx-auto mt-4 w-20"
             style={{ "--reveal-delay": "2" } as React.CSSProperties}
           />
         </div>
 
-        <div className="flex flex-col gap-8">
+        {/* Stack container — exactly 3× panel height */}
+        <div
+          className="destinations-stack relative"
+          style={
+            {
+              height: "calc((var(--panel-h) + var(--gap)) * 3)",
+            } as React.CSSProperties
+          }
+        >
           {destinations.map((destination, index) => {
-            const alignment =
-              index % 2 === 0 ? "items-start text-left" : "items-end text-right"
-
+            const isRight = destination.align === "right"
             return (
               <div
                 key={destination.title}
-                className="destination-panel bhutan-card group"
+                className={`bhutan-card group sticky overflow-hidden ${zLevels[index]}`}
+                style={
+                  {
+                    top: stickyTops[index],
+                    height: "var(--panel-h)",
+                  } as React.CSSProperties
+                }
               >
-                <div className="destination-panel-shell relative min-h-[20rem] overflow-hidden rounded-[var(--pathfinder-card-radius)] sm:min-h-[24rem] md:min-h-[28rem]">
+                <div className="destination-panel-shell relative h-full w-full overflow-hidden rounded-[var(--pathfinder-card-radius)]">
                   <Image
                     src={destination.image}
                     alt={destination.title}
                     fill
-                    sizes="(min-width: 1024px) 900px, (min-width: 768px) 85vw, 95vw"
-                    className="destination-panel-image object-cover transition-transform duration-500 group-focus-within:scale-105 group-hover:scale-105"
+                    priority={index === 0}
+                    sizes="(min-width: 1280px) 1152px, (min-width: 768px) 85vw, 95vw"
+                    className="destination-panel-image object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   />
                   <div
-                    className="destination-panel-overlay pointer-events-none absolute inset-0 opacity-60 transition-opacity duration-500 group-focus-within:opacity-90 group-hover:opacity-90"
+                    className="destination-panel-overlay pointer-events-none absolute inset-0"
                     aria-hidden="true"
                   />
                   <div
-                    className={`destination-panel-legibility absolute inset-0 flex flex-col justify-end gap-3 p-6 sm:p-8 md:p-11 ${alignment}`}
+                    className={`absolute bottom-10 flex flex-col gap-2 px-8 sm:bottom-12 sm:px-12 md:bottom-14 md:px-14 ${
+                      isRight
+                        ? "right-0 items-end text-right"
+                        : "left-0 items-start text-left"
+                    }`}
                   >
-                    <div className="destination-panel-content max-w-sm text-balance sm:max-w-lg">
+                    <div className="max-w-sm sm:max-w-lg">
                       <p className="font-body eyebrow-compact text-gold">
                         {destination.subtitle}
                       </p>
-                      <h3 className="font-display mt-2 text-xl text-white sm:text-2xl md:text-3xl">
+                      <h3 className="font-display mt-2 text-2xl text-white sm:text-3xl md:text-4xl">
                         {destination.title}
                       </h3>
                       <p className="font-body mt-2 text-sm leading-relaxed text-white/90 sm:text-base">
