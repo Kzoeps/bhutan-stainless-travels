@@ -82,27 +82,13 @@ const PackagesSection = () => {
             return (
               <div
                 key={pkg.title}
-                className={`bhutan-card flex flex-col overflow-hidden ${
-                  pkg.featured
-                    ? "border-gold/60 ring-gold/25 shadow-[0_18px_40px_-28px_rgba(103,70,38,0.6)] ring-1"
-                    : ""
-                }`}
+                className="bhutan-card flex flex-col overflow-hidden"
               >
-                {pkg.featured && (
-                  <div className="font-body border-gold/30 bg-cream/80 text-maroon flex items-center justify-center border-b px-5 py-3 text-[10px] font-semibold tracking-[0.26em] uppercase sm:px-6 sm:text-[11px]">
-                    Featured journey
-                  </div>
-                )}
                 <div className="bg-cream flex flex-1 flex-col p-6 sm:p-7">
-                  <div className="mb-4 flex items-center justify-between">
+                  <div className="mb-4">
                     <span className="font-display text-gold/70 text-xl tracking-[0.28em] sm:text-2xl md:text-3xl">
                       {marker}
                     </span>
-                    {pkg.featured && (
-                      <span className="font-body border-gold/40 bg-cream/80 text-maroon rounded-full border px-3 py-1 text-[9px] font-semibold tracking-[0.2em] uppercase sm:text-[10px]">
-                        Signature
-                      </span>
-                    )}
                   </div>
                   <h3 className="font-display text-xl text-card-foreground sm:text-2xl">
                     {pkg.title}
@@ -135,11 +121,7 @@ const PackagesSection = () => {
 
                   <a
                     href="#contact"
-                    className={`font-body block rounded-lg py-3.5 text-center text-sm font-medium tracking-wide transition-all duration-300 ${
-                      pkg.featured
-                        ? "hover:bg-gold bg-maroon text-cream hover:text-foreground"
-                        : "border-maroon text-maroon hover:bg-maroon hover:text-cream border"
-                    }`}
+                    className="font-body border-maroon text-maroon hover:bg-maroon hover:text-cream block rounded-lg border py-3.5 text-center text-sm font-medium tracking-wide transition-all duration-300"
                   >
                     Get a quote
                   </a>

@@ -11,7 +11,7 @@ const HeroSection = () => {
           fill
           priority
           sizes="100vw"
-          src="/pathfinder/hero-bhutan.jpg"
+          src="/jakar-dzong.webp"
         />
       </div>
       <div className="bg-maroon-deep/50 absolute inset-0" />
