@@ -48,7 +48,7 @@
   --bhutan-radius-card: 1.5rem;
   --bhutan-radius-pill: 999px;
   --pathfinder-gold: var(--bhutan-saffron);
-  --pathfinder-maroon: var(--bhutan-terracotta);
+  --pathfinder-maroon: oklch(0.42 0.1 155);
   --pathfinder-maroon-deep: color-mix(
     in oklab,
     var(--pathfinder-maroon) 72%,
