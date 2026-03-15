@@ -4,7 +4,7 @@ const AboutSection = () => {
   return (
     <section
       id="about"
-      className="bg-maroon-deep relative overflow-hidden py-20"
+      className="section-seam-top-from-cream-dark bg-maroon-deep relative overflow-hidden py-20"
     >
       <div
         className="absolute right-0 bottom-0 left-0 h-24 bg-bottom bg-repeat-x opacity-20"
@@ -15,13 +15,22 @@ const AboutSection = () => {
       />
       <div className="relative z-10 mx-auto max-w-4xl px-6">
         <div className="mb-10 text-center">
-          <p className="font-body text-gold mb-2 text-sm font-medium tracking-wide uppercase">
+          <p
+            className="reveal font-body text-gold mb-2 text-sm font-medium tracking-wide uppercase"
+            style={{ "--reveal-delay": "0" } as React.CSSProperties}
+          >
             Why Bhutan?
           </p>
-          <h2 className="font-display text-cream mb-3 text-3xl md:text-4xl">
+          <h2
+            className="reveal font-display text-cream mb-3 text-3xl md:text-4xl"
+            style={{ "--reveal-delay": "1" } as React.CSSProperties}
+          >
             A place like nowhere else
           </h2>
-          <div className="bhutan-divider mt-4 w-20" />
+          <div
+            className="reveal bhutan-divider mt-4 w-20"
+            style={{ "--reveal-delay": "2" } as React.CSSProperties}
+          />
         </div>
 
         <div className="font-body text-cream/80 type-compact grid gap-8 md:grid-cols-2">

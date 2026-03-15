@@ -1,19 +1,32 @@
 "use client"
 
 import { Mail, MapPin, Phone } from "lucide-react"
+import * as React from "react"
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="bg-background py-20">
+    <section
+      id="contact"
+      className="section-seam-top-from-maroon relative bg-background py-20"
+    >
       <div className="mx-auto max-w-4xl px-6">
         <div className="mb-14 text-center">
-          <p className="font-body text-gold mb-2 text-sm font-medium tracking-wide uppercase">
+          <p
+            className="reveal font-body text-gold mb-2 text-sm font-medium tracking-wide uppercase"
+            style={{ "--reveal-delay": "0" } as React.CSSProperties}
+          >
             Let&apos;s talk
           </p>
-          <h2 className="font-display mb-3 text-3xl text-foreground md:text-4xl">
+          <h2
+            className="reveal font-display mb-3 text-3xl text-foreground md:text-4xl"
+            style={{ "--reveal-delay": "1" } as React.CSSProperties}
+          >
             Ready to plan your trip?
           </h2>
-          <div className="bhutan-divider mt-4 w-20" />
+          <div
+            className="reveal bhutan-divider mt-4 w-20"
+            style={{ "--reveal-delay": "2" } as React.CSSProperties}
+          />
         </div>
 
         <div className="grid gap-10 md:grid-cols-2">

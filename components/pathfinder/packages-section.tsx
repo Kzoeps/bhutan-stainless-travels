@@ -1,4 +1,5 @@
 import { Compass, Crown, Mountain } from "lucide-react"
+import * as React from "react"
 
 const packages = [
   {
@@ -48,16 +49,28 @@ const packages = [
 
 const PackagesSection = () => {
   return (
-    <section id="packages" className="bg-cream-dark py-20">
+    <section
+      id="packages"
+      className="section-seam-top-from-bg bg-cream-dark relative py-20"
+    >
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-14 text-center">
-          <p className="font-body text-gold mb-2 text-sm font-medium tracking-wide uppercase">
+          <p
+            className="reveal font-body text-gold mb-2 text-sm font-medium tracking-wide uppercase"
+            style={{ "--reveal-delay": "0" } as React.CSSProperties}
+          >
             Our trips
           </p>
-          <h2 className="font-display mb-3 text-3xl text-foreground md:text-4xl">
+          <h2
+            className="reveal font-display mb-3 text-3xl text-foreground md:text-4xl"
+            style={{ "--reveal-delay": "1" } as React.CSSProperties}
+          >
             Pick the trip that suits you
           </h2>
-          <div className="bhutan-divider mt-4 w-20" />
+          <div
+            className="reveal bhutan-divider mt-4 w-20"
+            style={{ "--reveal-delay": "2" } as React.CSSProperties}
+          />
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
