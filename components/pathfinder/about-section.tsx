@@ -24,8 +24,8 @@ const AboutSection = () => {
           <div className="bhutan-divider mt-4 w-20" />
         </div>
 
-        <div className="font-body text-cream/80 grid gap-10 text-sm leading-relaxed md:grid-cols-2">
-          <div className="space-y-4">
+        <div className="font-body text-cream/80 type-compact grid gap-8 md:grid-cols-2">
+          <div className="space-y-3">
             <p>
               Bhutan is the world&apos;s only carbon-negative country and a
               place that measures success by happiness, not GDP. Over 70% of the
@@ -38,7 +38,7 @@ const AboutSection = () => {
               nothing else like it.
             </p>
           </div>
-          <div className="space-y-4">
+          <div className="space-y-3">
             <p>
               We&apos;re a local team, and we love showing people the Bhutan we
               know. That means sharing meals with families, trying archery with
