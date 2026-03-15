@@ -47,7 +47,7 @@ const PackagesSection = () => {
   return (
     <section
       id="packages"
-      className="section-seam-top-from-bg bg-editorial-surface relative py-20"
+      className="section-seam-top-from-editorial bg-editorial-surface relative py-20"
       style={
         {
           "--section-seam-height": "6.5rem",
