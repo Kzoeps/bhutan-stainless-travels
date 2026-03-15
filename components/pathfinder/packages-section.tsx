@@ -51,7 +51,7 @@ const PackagesSection = () => {
   return (
     <section
       id="packages"
-      className="section-seam-top-from-bg bg-cream-dark relative py-20"
+      className="section-seam-top-from-bg bg-editorial-surface relative py-20"
     >
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-14 text-center">
