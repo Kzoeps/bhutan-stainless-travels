@@ -75,34 +75,42 @@ const PackagesSection = () => {
             return (
               <div
                 key={pkg.title}
-                className={`bhutan-card flex flex-col ${
-                  pkg.featured ? "border-gold ring-gold/20 ring-1" : ""
+                className={`bhutan-card flex flex-col overflow-hidden ${
+                  pkg.featured
+                    ? "border-gold/60 ring-gold/25 shadow-[0_18px_40px_-28px_rgba(103,70,38,0.6)] ring-1"
+                    : ""
                 }`}
               >
                 {pkg.featured && (
-                  <div className="font-body bg-maroon text-cream py-2 text-center text-xs font-semibold tracking-wide uppercase">
-                    Most Popular
+                  <div className="font-body border-gold/30 bg-cream/80 text-maroon flex items-center justify-center border-b px-6 py-3 text-[11px] font-semibold tracking-[0.26em] uppercase">
+                    Featured journey
                   </div>
                 )}
-                <div className="flex flex-1 flex-col bg-card p-6">
-                  <span className="font-display text-gold/80 mb-4 text-3xl tracking-[0.2em] md:text-4xl">
-                    {marker}
-                  </span>
-                  <h3 className="font-display mb-1 text-xl text-card-foreground">
+                <div className="flex flex-1 flex-col bg-card p-7">
+                  <div className="mb-4 flex items-center justify-between">
+                    <span className="font-display text-gold/70 text-2xl tracking-[0.32em] md:text-3xl">
+                      {marker}
+                    </span>
+                    {pkg.featured && (
+                      <span className="font-body border-gold/40 bg-cream/80 text-maroon rounded-full border px-3 py-1 text-[10px] font-semibold tracking-[0.2em] uppercase">
+                        Signature
+                      </span>
+                    )}
+                  </div>
+                  <h3 className="font-display text-2xl text-card-foreground">
                     {pkg.title}
                   </h3>
-                  <p className="font-body mb-5 text-sm text-muted-foreground">
-                    {pkg.duration}
-                  </p>
-
-                  <div className="mb-5">
-                    <span className="font-display text-2xl text-foreground">
+                  <div className="mt-3 flex flex-wrap items-baseline gap-2">
+                    <span className="font-display text-3xl text-foreground md:text-4xl">
                       {pkg.price}
                     </span>
-                    <span className="font-body ml-2 text-xs text-muted-foreground">
+                    <span className="font-body text-xs text-muted-foreground">
                       {pkg.priceNote}
                     </span>
                   </div>
+                  <p className="font-body mt-3 text-sm text-muted-foreground">
+                    {pkg.duration}
+                  </p>
 
                   <ul className="mb-6 flex-1 space-y-2.5">
                     {pkg.highlights.map((highlight) => (
