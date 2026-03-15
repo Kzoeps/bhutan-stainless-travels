@@ -59,7 +59,7 @@ const PackagesSection = () => {
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-14 text-center">
           <p
-            className="reveal font-body text-gold mb-2 text-sm font-medium tracking-wide uppercase"
+            className="reveal font-body text-gold eyebrow-compact mb-2"
             style={{ "--reveal-delay": "0" } as React.CSSProperties}
           >
             Our trips
@@ -93,7 +93,7 @@ const PackagesSection = () => {
                     Featured journey
                   </div>
                 )}
-                <div className="flex flex-1 flex-col bg-card p-6 sm:p-7">
+                <div className="bg-cream flex flex-1 flex-col p-6 sm:p-7">
                   <div className="mb-4 flex items-center justify-between">
                     <span className="font-display text-gold/70 text-xl tracking-[0.28em] sm:text-2xl md:text-3xl">
                       {marker}
@@ -119,13 +119,15 @@ const PackagesSection = () => {
                     {pkg.duration}
                   </p>
 
-                  <ul className="mb-6 flex-1 space-y-2.5">
+                  <ul className="mb-6 flex-1 space-y-3">
                     {pkg.highlights.map((highlight) => (
                       <li
                         key={highlight}
-                        className="font-body text-slate flex items-start gap-2.5 text-xs sm:text-sm"
+                        className="font-body text-slate flex items-start gap-2.5 text-xs leading-relaxed sm:text-sm"
                       >
-                        <span className="text-gold mt-0.5 text-xs">●</span>
+                        <span className="text-gold mt-1 text-xs opacity-70">
+                          —
+                        </span>
                         {highlight}
                       </li>
                     ))}
