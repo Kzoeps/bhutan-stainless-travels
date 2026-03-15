@@ -286,6 +286,14 @@
     font-family: var(--pathfinder-font-body);
   }
 
+  .font-display {
+    font-family: var(--pathfinder-font-display);
+  }
+
+  .font-body {
+    font-family: var(--pathfinder-font-body);
+  }
+
   .fade-in {
     animation: pathfinder-fade-in 700ms ease-out both;
   }
