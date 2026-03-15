@@ -163,9 +163,15 @@
         100%
     );
     box-shadow:
+      /* ambient depth — soft wide drop */
       0 20px 45px -35px
         color-mix(in oklab, var(--pathfinder-ink) 65%, transparent),
-      0 1px 0 0 color-mix(in oklab, var(--pathfinder-cream) 55%, transparent);
+      /* mid-range lift — adds perceived elevation without heaviness */ 0 4px
+        12px -6px color-mix(in oklab, var(--pathfinder-ink) 18%, transparent),
+      /* inset top-edge highlight — simulates light catching the card rim */
+        inset 0 1px 0 0 color-mix(in oklab, white 72%, var(--pathfinder-cream)),
+      /* inset bottom inner shadow — anchors the card base subtly */ inset
+        0 -1px 0 0 color-mix(in oklab, var(--pathfinder-slate) 8%, transparent);
   }
 
   .bhutan-divider {
@@ -477,6 +483,47 @@
   .interactive-lift:focus-visible {
     outline: 2px solid color-mix(in oklab, var(--bhutan-terracotta) 55%, white);
     outline-offset: 3px;
+  }
+
+  /* Section transition gradients — subtle feathering at section seams */
+  .section-seam-top-from-bg::before,
+  .section-seam-top-from-cream-dark::before,
+  .section-seam-top-from-maroon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5rem;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Packages top: bg-background → bg-cream-dark */
+  .section-seam-top-from-bg::before {
+    background: linear-gradient(
+      to bottom,
+      color-mix(in oklab, var(--background) 55%, transparent) 0%,
+      transparent 100%
+    );
+  }
+
+  /* About top: bg-cream-dark → bg-maroon-deep */
+  .section-seam-top-from-cream-dark::before {
+    background: linear-gradient(
+      to bottom,
+      color-mix(in oklab, var(--pathfinder-cream) 28%, var(--pathfinder-ink)) 0%,
+      transparent 100%
+    );
+  }
+
+  /* Contact top: bg-maroon-deep → bg-background */
+  .section-seam-top-from-maroon::before {
+    background: linear-gradient(
+      to bottom,
+      color-mix(in oklab, var(--pathfinder-maroon-deep) 45%, transparent) 0%,
+      transparent 100%
+    );
   }
 }
 
