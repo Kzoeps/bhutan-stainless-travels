@@ -48,6 +48,13 @@ const PackagesSection = () => {
     <section
       id="packages"
       className="section-seam-top-from-bg bg-editorial-surface relative py-20"
+      style={
+        {
+          "--section-seam-height": "6.5rem",
+          "--section-seam-opacity": "0.9",
+          "--section-seam-blur": "6px",
+        } as React.CSSProperties
+      }
     >
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-14 text-center">
