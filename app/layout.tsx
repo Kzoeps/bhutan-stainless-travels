@@ -48,12 +48,12 @@ export default function RootLayout({
       <body>
         <style>{`
           :is(a, button, input, select, textarea):focus-visible {
-            outline: 2px solid var(--bhutan-terracotta);
+            outline: 2px solid var(--pathfinder-maroon);
             outline-offset: 3px;
           }
 
           :is(input, select, textarea):focus-visible {
-            box-shadow: 0 0 0 3px color-mix(in oklab, var(--bhutan-terracotta) 20%, transparent);
+            box-shadow: 0 0 0 3px color-mix(in oklab, var(--pathfinder-gold) 25%, transparent);
           }
         `}</style>
         <ThemeProvider>{children}</ThemeProvider>
