@@ -58,7 +58,7 @@ const DestinationsSection = () => {
                 key={destination.title}
                 className="destination-panel bhutan-card group"
               >
-                <div className="destination-panel-shell relative min-h-[22rem] overflow-hidden md:min-h-[28rem]">
+                <div className="destination-panel-shell relative min-h-[20rem] overflow-hidden sm:min-h-[24rem] md:min-h-[28rem]">
                   <Image
                     src={destination.image}
                     alt={destination.title}
@@ -67,20 +67,20 @@ const DestinationsSection = () => {
                     className="destination-panel-image object-cover transition-transform duration-500 group-focus-within:scale-105 group-hover:scale-105"
                   />
                   <div
-                    className="destination-panel-overlay pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-focus-within:opacity-100 group-hover:opacity-100"
+                    className="destination-panel-overlay pointer-events-none absolute inset-0 opacity-60 transition-opacity duration-500 group-focus-within:opacity-90 group-hover:opacity-90"
                     aria-hidden="true"
                   />
                   <div
-                    className={`destination-panel-legibility absolute inset-0 flex flex-col justify-end p-6 md:p-10 ${alignment}`}
+                    className={`destination-panel-legibility absolute inset-0 flex flex-col justify-end gap-2 p-5 sm:p-7 md:p-10 ${alignment}`}
                   >
-                    <div className="destination-panel-content max-w-md text-balance">
-                      <p className="font-body text-gold mb-2 text-xs font-medium tracking-wide uppercase">
+                    <div className="destination-panel-content max-w-xs text-balance sm:max-w-md">
+                      <p className="font-body text-gold text-[11px] font-medium tracking-wide uppercase sm:text-xs">
                         {destination.subtitle}
                       </p>
-                      <h3 className="font-display mb-3 text-2xl text-white md:text-3xl">
+                      <h3 className="font-display mt-2 text-xl text-white sm:text-2xl md:text-3xl">
                         {destination.title}
                       </h3>
-                      <p className="font-body text-sm leading-relaxed text-white/90 md:text-base">
+                      <p className="font-body mt-2 text-sm leading-relaxed text-white/90 sm:text-base">
                         {destination.description}
                       </p>
                     </div>
