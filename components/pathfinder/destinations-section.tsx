@@ -50,26 +50,35 @@ const DestinationsSection = () => {
 
         <div className="grid gap-6 md:grid-cols-3">
           {destinations.map((destination) => (
-            <div key={destination.title} className="bhutan-card group">
-              <div className="relative h-64 overflow-hidden">
+            <div
+              key={destination.title}
+              className="destination-panel bhutan-card group"
+            >
+              <div className="destination-panel-shell relative h-64 overflow-hidden">
                 <Image
                   src={destination.image}
                   alt={destination.title}
                   fill
                   sizes="(min-width: 1024px) 320px, (min-width: 768px) 30vw, 90vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="destination-panel-image object-cover transition-transform duration-500 group-focus-within:scale-105 group-hover:scale-105"
+                />
+                <div
+                  className="destination-panel-overlay pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-focus-within:opacity-100 group-hover:opacity-100"
+                  aria-hidden="true"
                 />
               </div>
-              <div className="bg-card p-5">
-                <p className="font-body text-gold mb-1 text-xs font-medium tracking-wide uppercase">
-                  {destination.subtitle}
-                </p>
-                <h3 className="font-display mb-2 text-xl text-card-foreground">
-                  {destination.title}
-                </h3>
-                <p className="font-body text-sm leading-relaxed text-muted-foreground">
-                  {destination.description}
-                </p>
+              <div className="destination-panel-legibility bg-card p-5">
+                <div className="destination-panel-content">
+                  <p className="font-body text-gold mb-1 text-xs font-medium tracking-wide uppercase">
+                    {destination.subtitle}
+                  </p>
+                  <h3 className="font-display mb-2 text-xl text-card-foreground">
+                    {destination.title}
+                  </h3>
+                  <p className="font-body text-sm leading-relaxed text-muted-foreground">
+                    {destination.description}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
