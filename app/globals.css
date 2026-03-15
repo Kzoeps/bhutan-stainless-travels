@@ -49,6 +49,11 @@
   --bhutan-radius-pill: 999px;
   --pathfinder-gold: var(--bhutan-saffron);
   --pathfinder-maroon: var(--bhutan-terracotta);
+  --pathfinder-maroon-deep: color-mix(
+    in oklab,
+    var(--pathfinder-maroon) 72%,
+    var(--pathfinder-ink)
+  );
   --pathfinder-cream: var(--bhutan-cream);
   --pathfinder-ink: var(--bhutan-ink);
   --pathfinder-slate: var(--bhutan-slate);
@@ -189,6 +194,26 @@
     background-color: var(--pathfinder-maroon);
   }
 
+  .bg-maroon-deep {
+    background-color: var(--pathfinder-maroon-deep);
+  }
+
+  .bg-maroon-deep\/95 {
+    background-color: color-mix(
+      in oklab,
+      var(--pathfinder-maroon-deep) 95%,
+      transparent
+    );
+  }
+
+  .bg-maroon-deep\/50 {
+    background-color: color-mix(
+      in oklab,
+      var(--pathfinder-maroon-deep) 50%,
+      transparent
+    );
+  }
+
   .bg-cream {
     background-color: var(--pathfinder-cream);
   }
@@ -205,12 +230,52 @@
     color: var(--pathfinder-cream);
   }
 
+  .text-cream\/80 {
+    color: color-mix(in oklab, var(--pathfinder-cream) 80%, transparent);
+  }
+
+  .text-cream\/50 {
+    color: color-mix(in oklab, var(--pathfinder-cream) 50%, transparent);
+  }
+
+  .text-cream\/40 {
+    color: color-mix(in oklab, var(--pathfinder-cream) 40%, transparent);
+  }
+
   .text-ink {
     color: var(--pathfinder-ink);
   }
 
   .text-slate {
     color: var(--pathfinder-slate);
+  }
+
+  .border-cream\/40 {
+    border-color: color-mix(in oklab, var(--pathfinder-cream) 40%, transparent);
+  }
+
+  .bg-cream\/10 {
+    background-color: color-mix(
+      in oklab,
+      var(--pathfinder-cream) 10%,
+      transparent
+    );
+  }
+
+  .hover\:bg-cream\/10:hover {
+    background-color: color-mix(
+      in oklab,
+      var(--pathfinder-cream) 10%,
+      transparent
+    );
+  }
+
+  .ring-gold\/20 {
+    --tw-ring-color: color-mix(
+      in oklab,
+      var(--pathfinder-gold) 20%,
+      transparent
+    );
   }
 
   .font-pathfinder-display {
