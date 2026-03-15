@@ -85,7 +85,7 @@ const PackagesSection = () => {
                 }`}
               >
                 {pkg.featured && (
-                  <div className="font-body bg-primary py-2 text-center text-xs font-semibold tracking-wide text-primary-foreground uppercase">
+                  <div className="font-body bg-maroon text-cream py-2 text-center text-xs font-semibold tracking-wide uppercase">
                     Most Popular
                   </div>
                 )}
@@ -127,8 +127,8 @@ const PackagesSection = () => {
                     href="#contact"
                     className={`font-body block rounded-lg py-3 text-center text-sm font-medium tracking-wide transition-all duration-300 ${
                       pkg.featured
-                        ? "hover:bg-gold bg-primary text-primary-foreground hover:text-foreground"
-                        : "border border-primary text-foreground hover:bg-primary hover:text-primary-foreground"
+                        ? "hover:bg-gold bg-maroon text-cream hover:text-foreground"
+                        : "border-maroon text-maroon hover:bg-maroon hover:text-cream border"
                     }`}
                   >
                     Get a quote

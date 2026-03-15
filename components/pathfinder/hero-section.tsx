@@ -41,7 +41,7 @@ const HeroSection = () => {
         <div className="flex flex-col justify-center gap-3 sm:flex-row">
           <a
             href="#packages"
-            className="font-pathfinder-body hover:bg-gold rounded-lg bg-primary px-7 py-3.5 text-sm font-medium tracking-wide text-primary-foreground transition-all duration-300 hover:text-foreground"
+            className="font-pathfinder-body hover:bg-gold bg-maroon text-cream rounded-lg px-7 py-3.5 text-sm font-medium tracking-wide transition-all duration-300 hover:text-foreground"
           >
             See our trips
           </a>

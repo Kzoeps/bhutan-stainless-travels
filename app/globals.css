@@ -200,6 +200,18 @@
     background-color: var(--pathfinder-maroon);
   }
 
+  .border-maroon {
+    border-color: var(--pathfinder-maroon);
+  }
+
+  .hover\:bg-maroon:hover {
+    background-color: var(--pathfinder-maroon);
+  }
+
+  .hover\:text-cream:hover {
+    color: var(--pathfinder-cream);
+  }
+
   .bg-maroon-deep {
     background-color: var(--pathfinder-maroon-deep);
   }
