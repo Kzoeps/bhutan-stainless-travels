@@ -20,11 +20,11 @@ const displayFont = DM_Serif_Display({
 export const metadata: Metadata = {
   title: "Dragon Pathfinder | Tailored Bhutan Journeys",
   description:
-    "Plan a Bhutan trip with local hosts, custom routes, and pacing built around your interests from Paro to Bumthang.",
+    "Plan a Bhutan trip with local hosts, tailored routes, and pacing built around your interests from Paro to Bumthang.",
   openGraph: {
     title: "Dragon Pathfinder | Tailored Bhutan Journeys",
     description:
-      "Plan a Bhutan trip with local hosts, custom routes, and pacing built around your interests from Paro to Bumthang.",
+      "Plan a Bhutan trip with local hosts, tailored routes, and pacing built around your interests from Paro to Bumthang.",
     type: "website",
   },
 }

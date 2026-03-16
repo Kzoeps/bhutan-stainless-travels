@@ -62,7 +62,7 @@ const AboutSection = () => {
         <div className="mt-14 grid grid-cols-2 gap-6 md:grid-cols-4">
           {[
             { value: "Local", label: "Bhutan-based team" },
-            { value: "Custom", label: "Route planning" },
+            { value: "Tailored", label: "Route planning" },
             { value: "Hosts", label: "Family stays" },
             { value: "Support", label: "On-trip help" },
           ].map((stat) => (

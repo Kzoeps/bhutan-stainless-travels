@@ -75,9 +75,9 @@ const PackagesSection = () => {
             className="reveal font-body text-slate mx-auto mt-5 max-w-2xl text-sm"
             style={{ "--reveal-delay": "3" } as React.CSSProperties}
           >
-            Each package is a starting template. We customize the route around
-            your preferences, comfort level, and daily pace, then send a
-            tailored quote.
+            Each package is a starting template. We tailor the route around your
+            preferences, comfort level, and daily pace, then send a tailored
+            quote.
           </p>
         </div>
 
@@ -100,7 +100,7 @@ const PackagesSection = () => {
                   </h3>
                   <div className="mt-3 space-y-1">
                     <p className="font-display text-2xl text-foreground sm:text-3xl md:text-4xl">
-                      Custom quote
+                      Tailored quote
                     </p>
                     <p className="font-body text-slate text-[11px] sm:text-xs">
                       Built around your pace and comfort level
