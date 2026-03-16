@@ -33,7 +33,7 @@ const ContactSection = () => {
           <div>
             <p className="font-body mb-6 text-sm leading-relaxed text-muted-foreground">
               Tell us your travel style, pace, group details, and stay
-              preferences. We&apos;ll shape a custom itinerary and send a
+              preferences. We&apos;ll shape a tailored itinerary and send a
               tailored quote, along with practical local guidance.
             </p>
             <div className="space-y-4">
