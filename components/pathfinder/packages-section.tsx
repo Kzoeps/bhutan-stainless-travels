@@ -2,43 +2,40 @@ import * as React from "react"
 
 const packages = [
   {
-    title: "Essential Bhutan",
-    duration: "5 Days / 4 Nights",
-    price: "$250",
-    priceNote: "per person / per night",
+    title: "Paro to Punakha",
+    duration: "5-7 days",
+    summary:
+      "A flexible western route shaped to your interests, comfort level, and pace.",
     highlights: [
-      "Paro & Thimphu valleys",
-      "Tiger's Nest monastery hike",
-      "Traditional farmhouse lunch",
-      "Thimphu cultural tour",
+      "Paro market strolls and riverside walks",
+      "Punakha Dzong with village backroads",
+      "Phobjikha homestays if you want quieter nights",
+      "Tiger's Nest hike paced to your comfort",
     ],
   },
   {
-    title: "Kingdom Explorer",
-    duration: "8 Days / 7 Nights",
-    price: "$250",
-    priceNote: "per person / per night",
+    title: "Valleys of Bhutan",
+    duration: "8-10 days",
+    summary:
+      "A balanced journey with room for craft visits, nature time, and rest days.",
     highlights: [
-      "Punakha, Paro & Thimphu",
-      "Dochula Pass panorama",
-      "Punakha Dzong visit",
-      "Traditional hot stone bath",
-      "Festival attendance (seasonal)",
+      "Thimphu artisan studios and weekend markets",
+      "Dochula Pass stops timed for light and weather",
+      "Hot stone bath after longer travel days",
+      "Festival time if your dates line up",
     ],
     featured: true,
   },
   {
-    title: "Royal Heritage",
-    duration: "12 Days / 11 Nights",
-    price: "$350",
-    priceNote: "per person / per night",
+    title: "Bumthang and Beyond",
+    duration: "10-14 days",
+    summary:
+      "A deeper eastward route that can include extra valley days or cultural workshops.",
     highlights: [
-      "All major valleys & dzongs",
-      "Bumthang spiritual journey",
-      "Phobjikha crane sanctuary",
-      "Private meditation session",
-      "Luxury lodge stays",
-      "Personal cultural guide",
+      "Bumthang cooking lessons with a local family",
+      "Phobjikha crane sanctuary visits",
+      "Quiet temple walks and forest trails",
+      "Extra nights added where you want to linger",
     ],
   },
 ]
@@ -62,18 +59,26 @@ const PackagesSection = () => {
             className="reveal font-body text-gold eyebrow-compact mb-2"
             style={{ "--reveal-delay": "0" } as React.CSSProperties}
           >
-            Our trips
+            Trip templates
           </p>
           <h2
             className="reveal font-display mb-3 text-3xl text-foreground md:text-4xl"
             style={{ "--reveal-delay": "1" } as React.CSSProperties}
           >
-            Pick the trip that suits you
+            Choose a starting template
           </h2>
           <div
             className="reveal bhutan-divider mt-4 w-20"
             style={{ "--reveal-delay": "2" } as React.CSSProperties}
           />
+          <p
+            className="reveal font-body text-slate mx-auto mt-5 max-w-2xl text-sm"
+            style={{ "--reveal-delay": "3" } as React.CSSProperties}
+          >
+            Each package is a starting template. We customize the route around
+            your preferences, comfort level, and daily pace, then send a
+            tailored quote.
+          </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
@@ -93,16 +98,19 @@ const PackagesSection = () => {
                   <h3 className="font-display text-xl text-card-foreground sm:text-2xl">
                     {pkg.title}
                   </h3>
-                  <div className="mt-3 flex flex-wrap items-baseline gap-2">
-                    <span className="font-display text-2xl text-foreground sm:text-3xl md:text-4xl">
-                      {pkg.price}
-                    </span>
-                    <span className="font-body text-slate text-[11px] sm:text-xs">
-                      {pkg.priceNote}
-                    </span>
+                  <div className="mt-3 space-y-1">
+                    <p className="font-display text-2xl text-foreground sm:text-3xl md:text-4xl">
+                      Custom quote
+                    </p>
+                    <p className="font-body text-slate text-[11px] sm:text-xs">
+                      Built around your pace and comfort level
+                    </p>
                   </div>
                   <p className="font-body text-slate mt-3 text-xs sm:text-sm">
                     {pkg.duration}
+                  </p>
+                  <p className="font-body text-slate mt-2 text-xs sm:text-sm">
+                    {pkg.summary}
                   </p>
 
                   <ul className="mb-6 flex-1 space-y-3">
@@ -112,7 +120,7 @@ const PackagesSection = () => {
                         className="font-body text-slate flex items-start gap-2.5 text-xs leading-relaxed sm:text-sm"
                       >
                         <span className="text-gold mt-1 text-xs opacity-70">
-                          —
+                          -
                         </span>
                         {highlight}
                       </li>
