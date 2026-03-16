@@ -16,10 +16,10 @@ const Navbar = () => {
   }, [])
 
   const links = [
-    { href: "#destinations", label: "Destinations" },
-    { href: "#packages", label: "Trips" },
-    { href: "#about", label: "About" },
-    { href: "#contact", label: "Contact" },
+    { href: "#destinations", label: "Places" },
+    { href: "#packages", label: "Journey ideas" },
+    { href: "#about", label: "Our story" },
+    { href: "#contact", label: "Plan with us" },
   ]
 
   return (
