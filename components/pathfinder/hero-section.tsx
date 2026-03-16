@@ -22,34 +22,34 @@ const HeroSection = () => {
           className="reveal font-pathfinder-body text-gold mb-4 text-sm font-medium tracking-widest uppercase"
           style={{ "--reveal-delay": "0" } as React.CSSProperties}
         >
-          Your Bhutan travel partner
+          Local planners for Bhutan journeys
         </p>
         <h1
           className="reveal font-pathfinder-display text-cream mb-4 text-4xl leading-tight md:text-6xl lg:text-7xl"
           style={{ "--reveal-delay": "1" } as React.CSSProperties}
         >
-          Discover the magic of Bhutan
+          Bhutan trips shaped around how you travel
         </h1>
         <div
           className="reveal bhutan-divider my-6 w-24"
           style={{ "--reveal-delay": "2" } as React.CSSProperties}
         />
         <p className="font-pathfinder-body text-cream/80 mx-auto mb-8 max-w-xl text-lg leading-relaxed md:text-xl">
-          We&apos;ll help you explore ancient monasteries, stunning valleys, and
-          the warmest hospitality you&apos;ve ever experienced.
+          Tell us what matters to you and we build the route together, from a
+          Phobjikha homestay morning to quiet monastery walks in Paro.
         </p>
         <div className="flex flex-col justify-center gap-3 sm:flex-row">
           <a
             href="#packages"
             className="font-pathfinder-body hover:bg-gold bg-maroon text-cream rounded-lg px-7 py-3.5 text-sm font-medium tracking-wide transition-all duration-300 hover:text-foreground"
           >
-            See our trips
+            Explore sample trips
           </a>
           <a
             href="#destinations"
             className="font-pathfinder-body border-cream/40 text-cream hover:bg-cream/10 rounded-lg border px-7 py-3.5 text-sm font-medium tracking-wide transition-all duration-300"
           >
-            Where we go
+            Destinations in Bhutan
           </a>
         </div>
       </div>
