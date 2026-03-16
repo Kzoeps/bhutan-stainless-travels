@@ -15,13 +15,13 @@ const ContactSection = () => {
             className="reveal font-body text-gold mb-2 text-sm font-medium tracking-wide uppercase"
             style={{ "--reveal-delay": "0" } as React.CSSProperties}
           >
-            Let&apos;s talk
+            Start your quote
           </p>
           <h2
             className="reveal font-display mb-3 text-3xl text-foreground md:text-4xl"
             style={{ "--reveal-delay": "1" } as React.CSSProperties}
           >
-            Ready to plan your trip?
+            Share your preferences for a tailored itinerary
           </h2>
           <div
             className="reveal bhutan-divider mt-4 w-20"
@@ -32,8 +32,9 @@ const ContactSection = () => {
         <div className="grid gap-10 md:grid-cols-2">
           <div>
             <p className="font-body mb-6 text-sm leading-relaxed text-muted-foreground">
-              Drop us a message and we&apos;ll get back to you within 24 hours
-              with a personalised trip plan. No pressure, just good advice.
+              Tell us your travel style, pace, group details, and stay
+              preferences. We&apos;ll shape a custom itinerary and send a
+              tailored quote, along with practical local guidance.
             </p>
             <div className="space-y-4">
               {[
@@ -57,17 +58,17 @@ const ContactSection = () => {
           >
             <div>
               <label className="font-body mb-1.5 block text-xs font-medium tracking-wide text-foreground uppercase">
-                Name
+                Your name
               </label>
               <input
                 type="text"
                 className="font-body focus:border-gold w-full rounded-lg border border-border bg-card px-4 py-3 text-sm text-foreground transition-colors focus:outline-none"
-                placeholder="Your name"
+                placeholder="Full name"
               />
             </div>
             <div>
               <label className="font-body mb-1.5 block text-xs font-medium tracking-wide text-foreground uppercase">
-                Email
+                Email for your quote
               </label>
               <input
                 type="email"
@@ -77,19 +78,19 @@ const ContactSection = () => {
             </div>
             <div>
               <label className="font-body mb-1.5 block text-xs font-medium tracking-wide text-foreground uppercase">
-                Tell us about your trip
+                Trip preferences
               </label>
               <textarea
                 rows={4}
                 className="font-body focus:border-gold w-full resize-none rounded-lg border border-border bg-card px-4 py-3 text-sm text-foreground transition-colors focus:outline-none"
-                placeholder="When are you thinking of visiting? How many people? Any must-sees?"
+                placeholder="Dates, group size, pace, lodging style, and must-see experiences"
               />
             </div>
             <button
               type="submit"
               className="font-body hover:bg-gold bg-maroon text-cream w-full rounded-lg py-3 text-sm font-medium tracking-wide transition-all duration-300 hover:text-foreground"
             >
-              Send message
+              Request a tailored quote
             </button>
           </form>
         </div>
