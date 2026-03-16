@@ -20,7 +20,7 @@ const Footer = () => {
             </span>
           </div>
           <p className="font-body text-cream/55 mb-4 text-sm">
-            Your friendly Bhutan travel partner since 2015
+            Local Bhutan planners since 2015, shaping routes around your pace.
           </p>
           <div className="bhutan-divider mb-4 w-12" />
           <p className="font-body text-cream/45 text-xs">
