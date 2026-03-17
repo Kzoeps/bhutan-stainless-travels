@@ -20,7 +20,16 @@ const displayFont = DM_Serif_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteSeo.canonicalOrigin),
-  ...buildSiteMetadata(),
+  ...buildSiteMetadata({
+    openGraph: {
+      siteName: siteSeo.brandName,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: siteSeo.defaultTitle,
+      description: siteSeo.defaultDescription,
+    },
+  }),
 }
 
 export default function RootLayout({
