@@ -2,7 +2,7 @@ import { siteSeo } from "@/lib/seo/site"
 
 export type JsonLd = Record<string, unknown>
 
-const businessName = "Bhutan Stainless"
+const businessName = siteSeo.brandName
 const businessEmail = "hello@bhutanstainless.bt"
 const businessPhone = "+975 2 334 567"
 const businessStreet = "Norzin Lam"

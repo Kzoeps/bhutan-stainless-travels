@@ -10,8 +10,8 @@ export type SiteSeoConfig = {
 
 export const siteSeo: SiteSeoConfig = {
   canonicalOrigin: "https://bhutanstainlesstravels.com",
-  brandName: "Dragon Pathfinder",
-  defaultTitle: "Dragon Pathfinder | Tailored Bhutan Journeys",
+  brandName: "Bhutan Stainless",
+  defaultTitle: "Bhutan Stainless | Tailored Bhutan Journeys",
   defaultDescription:
     "Plan a Bhutan trip with local hosts, tailored routes, and pacing built around your interests from Paro to Bumthang.",
   lastModified: "2026-03-17",
