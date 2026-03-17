@@ -33,12 +33,6 @@ export const metadata: Metadata = buildSiteMetadata({
   },
 })
 
-const globalSeoLinks = [
-  { href: "/bhutan-tours", label: "Signature Bhutan tours" },
-  { href: "/bhutan-itineraries", label: "Custom Bhutan itineraries" },
-  { href: "/bhutan-destinations", label: "Bhutan destinations guide" },
-]
-
 export default function Page() {
   const schemas = buildHomepageSchemas()
 
@@ -60,7 +54,7 @@ export default function Page() {
       <PackagesSection />
       <AboutSection />
       <ContactSection />
-      <Footer seoLinks={globalSeoLinks} />
+      <Footer />
     </main>
   )
 }

@@ -1,15 +1,6 @@
 import Image from "next/image"
 
-type FooterLink = {
-  href: string
-  label: string
-}
-
-type FooterProps = {
-  seoLinks?: FooterLink[]
-}
-
-const Footer = ({ seoLinks = [] }: FooterProps) => {
+const Footer = () => {
   return (
     <footer className="bg-maroon-deep py-10">
       <div className="mx-auto max-w-7xl px-6">
@@ -33,24 +24,6 @@ const Footer = ({ seoLinks = [] }: FooterProps) => {
               Local Bhutan planners since 2015, shaping routes around your pace.
             </p>
           </div>
-          {seoLinks.length > 0 && (
-            <div className="space-y-3">
-              <p className="font-body text-cream/60 text-xs font-semibold tracking-[0.2em] uppercase">
-                Explore Bhutan
-              </p>
-              <div className="flex flex-col items-center gap-2 md:items-start">
-                {seoLinks.map((link) => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    className="font-body text-cream/80 hover:text-gold text-sm transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-          )}
         </div>
         <div className="bhutan-divider mt-8 mb-4 w-12" />
         <p className="font-body text-cream/45 text-center text-xs">
