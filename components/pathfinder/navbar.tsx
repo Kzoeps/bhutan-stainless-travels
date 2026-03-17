@@ -30,9 +30,9 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <a href="#" className="flex items-center gap-3">
-          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white p-1">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2.5 sm:px-6 sm:py-4">
+        <a href="#" className="flex items-center gap-2.5 sm:gap-3">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white p-1 sm:h-14 sm:w-14">
             <Image
               src="/stainless-travels-logo.png"
               alt="Bhutan Stainless Travels"
@@ -41,7 +41,7 @@ const Navbar = () => {
               className="h-full w-full object-contain"
             />
           </div>
-          <span className="font-display text-cream text-lg leading-tight">
+          <span className="font-display text-cream text-base leading-tight sm:text-lg">
             Bhutan Stainless
           </span>
         </a>
@@ -61,6 +61,7 @@ const Navbar = () => {
         <button
           className="text-cream md:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
         >
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>

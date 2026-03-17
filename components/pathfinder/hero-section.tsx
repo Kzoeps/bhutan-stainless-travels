@@ -17,7 +17,7 @@ const HeroSection = () => {
       <div className="bg-maroon-deep/50 absolute inset-0" />
       <div className="absolute right-0 bottom-0 left-0 h-32 bg-gradient-to-t from-background to-transparent" />
 
-      <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
+      <div className="relative z-10 mx-auto max-w-3xl px-6 pt-16 text-center sm:pt-20 md:pt-0">
         <p
           className="reveal font-pathfinder-body text-gold mb-4 text-sm font-medium tracking-widest uppercase"
           style={{ "--reveal-delay": "0" } as React.CSSProperties}
