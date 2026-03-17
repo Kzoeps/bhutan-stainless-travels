@@ -16,10 +16,10 @@ const Navbar = () => {
   }, [])
 
   const links = [
-    { href: "#destinations", label: "Places" },
-    { href: "#packages", label: "Journey ideas" },
-    { href: "#about", label: "Our story" },
-    { href: "#contact", label: "Plan with us" },
+    { href: "/#destinations", label: "Places" },
+    { href: "/#packages", label: "Journey ideas" },
+    { href: "/#about", label: "Our story" },
+    { href: "/#contact", label: "Plan with us" },
     { href: "/bhutan-tours", label: "Signature tours" },
     { href: "/bhutan-itineraries", label: "Trip itineraries" },
     { href: "/bhutan-destinations", label: "Destination guide" },
