@@ -65,18 +65,22 @@ const DestinationsSection = () => {
         >
           {destinations.map((destination, index) => {
             const isRight = destination.align === "right"
+            const bottomGap = index < 2 ? 20 : 0
             return (
               <div
                 key={destination.title}
-                className={`bhutan-card group sticky overflow-hidden ${zLevels[index]}`}
+                className={`destination-stack-card group sticky ${zLevels[index]}`}
                 style={
                   {
                     top: "6rem",
-                    height: "var(--panel-h)",
+                    height: `calc(var(--panel-h) + ${bottomGap}px)`,
                   } as React.CSSProperties
                 }
               >
-                <div className="destination-panel-shell relative h-full w-full overflow-hidden rounded-[var(--pathfinder-card-radius)]">
+                <div
+                  className="bhutan-card destination-panel-shell relative w-full overflow-hidden rounded-[var(--pathfinder-card-radius)]"
+                  style={{ height: "var(--panel-h)" } as React.CSSProperties}
+                >
                   <Image
                     src={destination.image}
                     alt={destination.title}
