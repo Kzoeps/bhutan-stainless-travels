@@ -4,6 +4,26 @@ import { Mail, MapPin, Phone } from "lucide-react"
 import * as React from "react"
 
 const ContactSection = () => {
+  const [name, setName] = React.useState("")
+  const [subject, setSubject] = React.useState("")
+  const [preferences, setPreferences] = React.useState("")
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+
+    const body = [
+      `Trip preferences:`,
+      preferences.trim(),
+      ``,
+      `Name: ${name.trim()}`,
+    ]
+      .join("\n")
+      .trim()
+    const mailtoUrl = `mailto:hello@bhutanstainless.bt?subject=${encodeURIComponent(subject.trim())}&body=${encodeURIComponent(body)}`
+
+    window.location.href = mailtoUrl
+  }
+
   return (
     <section
       id="contact"
@@ -52,28 +72,30 @@ const ContactSection = () => {
             </div>
           </div>
 
-          <form
-            className="space-y-4"
-            onSubmit={(event) => event.preventDefault()}
-          >
+          <form className="space-y-4" onSubmit={handleSubmit}>
             <div>
               <label className="font-body mb-1.5 block text-xs font-medium tracking-wide text-foreground uppercase">
                 Your name
               </label>
               <input
                 type="text"
+                value={name}
+                onChange={(event) => setName(event.target.value)}
                 className="font-body focus:border-gold w-full rounded-lg border border-border bg-card px-4 py-3 text-sm text-foreground transition-colors focus:outline-none"
                 placeholder="Full name"
               />
             </div>
             <div>
               <label className="font-body mb-1.5 block text-xs font-medium tracking-wide text-foreground uppercase">
-                Email for your quote
+                Subject
               </label>
               <input
-                type="email"
+                type="text"
+                required
+                value={subject}
+                onChange={(event) => setSubject(event.target.value)}
                 className="font-body focus:border-gold w-full rounded-lg border border-border bg-card px-4 py-3 text-sm text-foreground transition-colors focus:outline-none"
-                placeholder="your@email.com"
+                placeholder="What would you like help planning?"
               />
             </div>
             <div>
@@ -82,6 +104,9 @@ const ContactSection = () => {
               </label>
               <textarea
                 rows={4}
+                required
+                value={preferences}
+                onChange={(event) => setPreferences(event.target.value)}
                 className="font-body focus:border-gold w-full resize-none rounded-lg border border-border bg-card px-4 py-3 text-sm text-foreground transition-colors focus:outline-none"
                 placeholder="Dates, group size, pace, lodging style, and must-see experiences"
               />
