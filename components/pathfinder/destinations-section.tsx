@@ -87,14 +87,14 @@ const DestinationsSection = () => {
                     fill
                     priority={index === 0}
                     sizes="(min-width: 1280px) 1152px, (min-width: 768px) 85vw, 95vw"
-                    className="destination-panel-image object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    className="destination-panel-image z-0 object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   />
                   <div
-                    className="destination-panel-overlay pointer-events-none absolute inset-0"
+                    className="destination-panel-overlay pointer-events-none absolute inset-0 z-10"
                     aria-hidden="true"
                   />
                   <div
-                    className={`absolute bottom-10 flex flex-col gap-2 px-8 sm:bottom-12 sm:px-12 md:bottom-14 md:px-14 ${
+                    className={`destination-panel-content absolute bottom-10 z-20 flex flex-col gap-2 px-8 sm:bottom-12 sm:px-12 md:bottom-14 md:px-14 ${
                       isRight
                         ? "right-0 items-end text-right"
                         : "left-0 items-start text-left"

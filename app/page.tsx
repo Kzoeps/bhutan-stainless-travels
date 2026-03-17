@@ -7,29 +7,28 @@ import Footer from "@/components/pathfinder/footer"
 import HeroSection from "@/components/pathfinder/hero-section"
 import Navbar from "@/components/pathfinder/navbar"
 import PackagesSection from "@/components/pathfinder/packages-section"
-import { buildSiteMetadata, siteSeo } from "@/lib/seo/site"
+import { buildCanonicalUrl, buildSiteMetadata } from "@/lib/seo/site"
 import { buildHomepageSchemas } from "@/lib/seo/schema"
 
-const homepageTitle = "Bhutan Tours | Tailor-Made Journeys by Dragon Pathfinder"
 const homepageDescription =
-  "Plan a Bhutan tour with local hosts, custom pacing, and curated stays across Paro, Thimphu, Punakha, and Bumthang."
+  "Plan a Bhutan tour with Bhutan Stainless Travels for local hosts, custom pacing, and curated stays across Paro, Thimphu, Punakha, and Bumthang."
+const homepageOgImage = buildCanonicalUrl("/og/bhutan-stainless-travels-og.png")
 
 export const metadata: Metadata = buildSiteMetadata({
-  title: homepageTitle,
   description: homepageDescription,
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: homepageTitle,
     description: homepageDescription,
-    url: siteSeo.canonicalOrigin,
+    url: buildCanonicalUrl("/"),
     type: "website",
+    images: [homepageOgImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: homepageTitle,
     description: homepageDescription,
+    images: [homepageOgImage],
   },
 })
 

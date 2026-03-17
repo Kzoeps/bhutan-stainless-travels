@@ -14,6 +14,7 @@ export const buildOrganizationSchema = (): JsonLd => ({
   "@type": "TravelAgency",
   "@id": `${siteSeo.canonicalOrigin}/#organization`,
   name: businessName,
+  logo: `${siteSeo.canonicalOrigin}/stainless-travels-logo.png`,
   url: siteSeo.canonicalOrigin,
   email: businessEmail,
   telephone: businessPhone,

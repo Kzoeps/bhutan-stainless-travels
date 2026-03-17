@@ -4,7 +4,7 @@ import { DM_Sans, DM_Serif_Display } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
-import { buildSiteMetadata, siteSeo } from "@/lib/seo/site"
+import { buildCanonicalUrl, buildSiteMetadata, siteSeo } from "@/lib/seo/site"
 
 const bodyFont = DM_Sans({
   subsets: ["latin"],
@@ -20,14 +20,24 @@ const displayFont = DM_Serif_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteSeo.canonicalOrigin),
+  manifest: "/manifest.webmanifest",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", type: "image/x-icon" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-icon.png", type: "image/png" }],
+  },
   ...buildSiteMetadata({
     openGraph: {
       siteName: siteSeo.brandName,
+      images: [buildCanonicalUrl("/og/bhutan-stainless-travels-og.png")],
     },
     twitter: {
       card: "summary_large_image",
       title: siteSeo.defaultTitle,
       description: siteSeo.defaultDescription,
+      images: [buildCanonicalUrl("/og/bhutan-stainless-travels-og.png")],
     },
   }),
 }

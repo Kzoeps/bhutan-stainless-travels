@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next"
 
-const siteUrl = "https://bhutanstainlesstravels.com"
+import { siteSeo } from "@/lib/seo/site"
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: ["/"],
       disallow: ["/api/", "/_next/"],
     },
-    sitemap: `${siteUrl}/sitemap.xml`,
-    host: siteUrl,
+    sitemap: `${siteSeo.canonicalOrigin}/sitemap.xml`,
+    host: siteSeo.canonicalOrigin,
   }
 }
