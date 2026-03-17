@@ -3,15 +3,22 @@ import Image from "next/image"
 
 import Footer from "@/components/pathfinder/footer"
 import Navbar from "@/components/pathfinder/navbar"
+import { buildCanonicalUrl } from "@/lib/seo/site"
+
+const canonicalUrl = buildCanonicalUrl("/bhutan-destinations")
 
 export const metadata: Metadata = {
   title: "Bhutan Destinations | Dragon Pathfinder",
   description:
     "Explore Punakha, Phobjikha, and Bumthang with local insight, seasonal timing, and flexible routes built around how you travel.",
+  alternates: {
+    canonical: canonicalUrl,
+  },
   openGraph: {
     title: "Bhutan Destinations | Dragon Pathfinder",
     description:
       "Explore Punakha, Phobjikha, and Bumthang with local insight, seasonal timing, and flexible routes built around how you travel.",
+    url: canonicalUrl,
     type: "website",
   },
 }
