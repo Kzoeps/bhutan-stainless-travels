@@ -2,12 +2,7 @@ import type { MetadataRoute } from "next"
 
 import { buildCanonicalUrl, siteSeo } from "@/lib/seo/site"
 
-const routes = [
-  "/",
-  "/bhutan-destinations",
-  "/bhutan-itineraries",
-  "/bhutan-tours",
-]
+const routes = ["/"]
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const uniqueRoutes = Array.from(new Set(routes))
