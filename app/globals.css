@@ -611,10 +611,9 @@
       gap: 2rem;
     }
 
-    .destinations-stack > .bhutan-card {
+    .destinations-stack > .destination-stack-card {
       position: relative !important;
       top: auto !important;
-      height: var(--panel-h) !important;
     }
   }
 
