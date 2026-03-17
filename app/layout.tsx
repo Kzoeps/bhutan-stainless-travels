@@ -4,6 +4,7 @@ import { DM_Sans, DM_Serif_Display } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
+import { buildSiteMetadata, siteSeo } from "@/lib/seo/site"
 
 const bodyFont = DM_Sans({
   subsets: ["latin"],
@@ -18,15 +19,8 @@ const displayFont = DM_Serif_Display({
 })
 
 export const metadata: Metadata = {
-  title: "Dragon Pathfinder | Tailored Bhutan Journeys",
-  description:
-    "Plan a Bhutan trip with local hosts, tailored routes, and pacing built around your interests from Paro to Bumthang.",
-  openGraph: {
-    title: "Dragon Pathfinder | Tailored Bhutan Journeys",
-    description:
-      "Plan a Bhutan trip with local hosts, tailored routes, and pacing built around your interests from Paro to Bumthang.",
-    type: "website",
-  },
+  metadataBase: new URL(siteSeo.canonicalOrigin),
+  ...buildSiteMetadata(),
 }
 
 export default function RootLayout({
