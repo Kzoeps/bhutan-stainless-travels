@@ -1,6 +1,21 @@
+import type { Metadata } from "next"
+
 import ContactSection from "@/components/pathfinder/contact-section"
 import Footer from "@/components/pathfinder/footer"
 import Navbar from "@/components/pathfinder/navbar"
+import { buildCanonicalUrl, buildSiteMetadata } from "@/lib/seo/site"
+
+const canonicalUrl = buildCanonicalUrl("/bhutan-tours")
+
+export const metadata: Metadata = buildSiteMetadata({
+  alternates: {
+    canonical: canonicalUrl,
+  },
+  openGraph: {
+    url: canonicalUrl,
+    type: "website",
+  },
+})
 
 const tourHighlights = [
   {

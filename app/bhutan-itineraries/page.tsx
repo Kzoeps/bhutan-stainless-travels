@@ -2,14 +2,22 @@ import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 
+import { buildCanonicalUrl } from "@/lib/seo/site"
+
+const canonicalUrl = buildCanonicalUrl("/bhutan-itineraries")
+
 export const metadata: Metadata = {
   title: "Bhutan Itineraries | Sample Journeys by Length & Style",
   description:
     "Explore Bhutan itinerary ideas for 5 to 14 days, from cultural valleys to alpine escapes. Compare trip lengths and travel styles, then request a custom route.",
+  alternates: {
+    canonical: canonicalUrl,
+  },
   openGraph: {
     title: "Bhutan Itineraries | Sample Journeys by Length & Style",
     description:
       "Explore Bhutan itinerary ideas for 5 to 14 days, from cultural valleys to alpine escapes. Compare trip lengths and travel styles, then request a custom route.",
+    url: canonicalUrl,
     type: "website",
   },
 }
