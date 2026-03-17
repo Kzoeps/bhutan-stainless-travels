@@ -8,6 +8,7 @@ import HeroSection from "@/components/pathfinder/hero-section"
 import Navbar from "@/components/pathfinder/navbar"
 import PackagesSection from "@/components/pathfinder/packages-section"
 import { buildSiteMetadata, siteSeo } from "@/lib/seo/site"
+import { buildHomepageSchemas } from "@/lib/seo/schema"
 
 const homepageTitle = "Bhutan Tours | Tailor-Made Journeys by Dragon Pathfinder"
 const homepageDescription =
@@ -33,11 +34,20 @@ export const metadata: Metadata = buildSiteMetadata({
 })
 
 export default function Page() {
+  const schemas = buildHomepageSchemas()
+
   return (
     <main
       id="top"
       className="motion-root min-h-svh bg-background text-foreground"
     >
+      {schemas.map((schema) => (
+        <script
+          key={String(schema["@id"] ?? schema["@type"])}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
       <Navbar />
       <HeroSection />
       <DestinationsSection />
