@@ -5,6 +5,7 @@ export type SiteSeoConfig = {
   brandName: string
   defaultTitle: string
   defaultDescription: string
+  lastModified: string
 }
 
 export const siteSeo: SiteSeoConfig = {
@@ -13,6 +14,12 @@ export const siteSeo: SiteSeoConfig = {
   defaultTitle: "Dragon Pathfinder | Tailored Bhutan Journeys",
   defaultDescription:
     "Plan a Bhutan trip with local hosts, tailored routes, and pacing built around your interests from Paro to Bumthang.",
+  lastModified: "2026-03-17",
+}
+
+export const buildCanonicalUrl = (pathname: string): string => {
+  const normalized = pathname.startsWith("/") ? pathname : `/${pathname}`
+  return `${siteSeo.canonicalOrigin}${normalized}`
 }
 
 export const buildSiteMetadata = (overrides: Metadata = {}): Metadata => {
