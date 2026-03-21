@@ -19,7 +19,7 @@ const ContactSection = () => {
     ]
       .join("\n")
       .trim()
-    const mailtoUrl = `mailto:hello@bhutanstainless.bt?subject=${encodeURIComponent(subject.trim())}&body=${encodeURIComponent(body)}`
+    const mailtoUrl = `mailto:sonamphuntsho1@gmail.com?subject=${encodeURIComponent(subject.trim())}&body=${encodeURIComponent(body)}`
 
     window.location.href = mailtoUrl
   }
@@ -60,7 +60,7 @@ const ContactSection = () => {
               {[
                 { icon: MapPin, text: "Norzin Lam, Thimphu, Bhutan" },
                 { icon: Phone, text: "+975 2 334 567" },
-                { icon: Mail, text: "hello@bhutanstainless.bt" },
+                { icon: Mail, text: "sonamphuntsho1@gmail.com" },
               ].map(({ icon: Icon, text }) => (
                 <div key={text} className="flex items-center gap-3">
                   <Icon className="text-gold" size={18} strokeWidth={1.5} />
