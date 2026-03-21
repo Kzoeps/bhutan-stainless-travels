@@ -14,7 +14,7 @@ const HeroSection = () => {
           src="/jakar-dzong.webp"
         />
       </div>
-      <div className="bg-maroon-deep/50 absolute inset-0" />
+      <div className="hero-image-scrim absolute inset-0" />
       <div className="absolute right-0 bottom-0 left-0 h-32 bg-gradient-to-t from-background to-transparent" />
 
       <div className="relative z-10 mx-auto max-w-3xl px-6 pt-16 text-center sm:pt-20 md:pt-0">
@@ -41,7 +41,7 @@ const HeroSection = () => {
         <div className="flex flex-col justify-center gap-3 sm:flex-row">
           <a
             href="#packages"
-            className="font-pathfinder-body hover:bg-gold bg-maroon text-cream rounded-lg px-7 py-3.5 text-sm font-medium tracking-wide transition-all duration-300 hover:text-foreground"
+            className="font-pathfinder-body hover:bg-gold bg-maroon text-cream hover:text-ink rounded-lg px-7 py-3.5 text-sm font-medium tracking-wide transition-all duration-300"
           >
             Explore sample trips
           </a>

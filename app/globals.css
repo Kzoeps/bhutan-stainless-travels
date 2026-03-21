@@ -5,6 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  color-scheme: light;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -62,9 +63,58 @@
   --pathfinder-section-space: var(--bhutan-space-section);
   --pathfinder-gutter: var(--bhutan-space-gutter);
   --pathfinder-card-radius: var(--bhutan-radius-card);
+  --pathfinder-surface-soft: color-mix(
+    in oklab,
+    var(--pathfinder-cream) 92%,
+    white
+  );
+  --pathfinder-surface-soft-alt: color-mix(
+    in oklab,
+    var(--pathfinder-cream) 78%,
+    var(--pathfinder-slate)
+  );
+  --pathfinder-surface-soft-glow: color-mix(
+    in oklab,
+    var(--pathfinder-cream) 82%,
+    white
+  );
+  --pathfinder-surface-card-border: color-mix(
+    in oklab,
+    var(--pathfinder-ink) 12%,
+    transparent
+  );
+  --pathfinder-surface-card-shadow: color-mix(
+    in oklab,
+    var(--pathfinder-ink) 65%,
+    transparent
+  );
+  --pathfinder-surface-card-highlight: color-mix(
+    in oklab,
+    white 72%,
+    var(--pathfinder-cream)
+  );
+  --pathfinder-surface-card-inner-shadow: color-mix(
+    in oklab,
+    var(--pathfinder-slate) 8%,
+    transparent
+  );
+  --pathfinder-soft-text: var(--pathfinder-slate);
+  --pathfinder-soft-accent: var(--pathfinder-maroon);
+  --pathfinder-contrast-text: var(--pathfinder-cream);
+  --pathfinder-contrast-text-muted: color-mix(
+    in oklab,
+    var(--pathfinder-cream) 90%,
+    transparent
+  );
+  --pathfinder-contrast-ring: color-mix(
+    in oklab,
+    var(--pathfinder-ink) 72%,
+    transparent
+  );
 }
 
 .dark {
+  color-scheme: dark;
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
@@ -96,6 +146,58 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  --pathfinder-surface-soft: color-mix(
+    in oklab,
+    var(--card) 84%,
+    var(--pathfinder-maroon-deep)
+  );
+  --pathfinder-surface-soft-alt: color-mix(
+    in oklab,
+    var(--pathfinder-maroon-deep) 44%,
+    var(--pathfinder-ink)
+  );
+  --pathfinder-surface-soft-glow: color-mix(
+    in oklab,
+    var(--pathfinder-gold) 12%,
+    var(--card)
+  );
+  --pathfinder-surface-card-border: color-mix(
+    in oklab,
+    var(--pathfinder-gold) 22%,
+    transparent
+  );
+  --pathfinder-surface-card-shadow: color-mix(in oklab, black 78%, transparent);
+  --pathfinder-surface-card-highlight: color-mix(
+    in oklab,
+    var(--pathfinder-gold) 20%,
+    transparent
+  );
+  --pathfinder-surface-card-inner-shadow: color-mix(
+    in oklab,
+    black 38%,
+    transparent
+  );
+  --pathfinder-soft-text: color-mix(
+    in oklab,
+    var(--pathfinder-cream) 70%,
+    var(--foreground)
+  );
+  --pathfinder-soft-accent: color-mix(
+    in oklab,
+    var(--pathfinder-gold) 45%,
+    var(--pathfinder-cream)
+  );
+  --pathfinder-contrast-text: color-mix(
+    in oklab,
+    var(--pathfinder-cream) 96%,
+    white
+  );
+  --pathfinder-contrast-text-muted: color-mix(
+    in oklab,
+    var(--pathfinder-cream) 82%,
+    white
+  );
+  --pathfinder-contrast-ring: color-mix(in oklab, black 82%, transparent);
 }
 
 @theme inline {
@@ -154,24 +256,21 @@
 
   .bhutan-card {
     border-radius: var(--pathfinder-card-radius);
-    border: 1px solid
-      color-mix(in oklab, var(--pathfinder-ink) 12%, transparent);
+    border: 1px solid var(--pathfinder-surface-card-border);
     background: linear-gradient(
       180deg,
-      color-mix(in oklab, var(--pathfinder-cream) 92%, white) 0%,
-      color-mix(in oklab, var(--pathfinder-cream) 75%, var(--pathfinder-slate))
-        100%
+      var(--pathfinder-surface-soft) 0%,
+      var(--pathfinder-surface-soft-alt) 100%
     );
     box-shadow:
       /* ambient depth — soft wide drop */
-      0 20px 45px -35px
-        color-mix(in oklab, var(--pathfinder-ink) 65%, transparent),
+      0 20px 45px -35px var(--pathfinder-surface-card-shadow),
       /* mid-range lift — adds perceived elevation without heaviness */ 0 4px
         12px -6px color-mix(in oklab, var(--pathfinder-ink) 18%, transparent),
       /* inset top-edge highlight — simulates light catching the card rim */
-        inset 0 1px 0 0 color-mix(in oklab, white 72%, var(--pathfinder-cream)),
+        inset 0 1px 0 0 var(--pathfinder-surface-card-highlight),
       /* inset bottom inner shadow — anchors the card base subtly */ inset
-        0 -1px 0 0 color-mix(in oklab, var(--pathfinder-slate) 8%, transparent);
+        0 -1px 0 0 var(--pathfinder-surface-card-inner-shadow);
   }
 
   .bhutan-divider {
@@ -187,36 +286,38 @@
   .destination-panel-overlay {
     background-image: linear-gradient(
       180deg,
-      color-mix(in oklab, var(--pathfinder-ink) 12%, transparent) 0%,
-      color-mix(in oklab, var(--pathfinder-ink) 35%, transparent) 55%,
-      color-mix(in oklab, var(--pathfinder-ink) 55%, transparent) 100%
+      color-mix(in oklab, var(--pathfinder-ink) 16%, transparent) 0%,
+      color-mix(in oklab, var(--pathfinder-ink) 42%, transparent) 55%,
+      color-mix(in oklab, var(--pathfinder-ink) 68%, transparent) 100%
     );
   }
 
   .destination-panel-content {
-    text-shadow: 0 6px 24px
-      color-mix(in oklab, var(--pathfinder-ink) 65%, transparent);
+    text-shadow: 0 6px 24px var(--pathfinder-contrast-ring);
+  }
+
+  .text-contrast-on-image {
+    color: var(--pathfinder-contrast-text);
+  }
+
+  .text-contrast-on-image-muted {
+    color: var(--pathfinder-contrast-text-muted);
   }
 
   .bg-editorial-surface {
     position: relative;
     isolation: isolate;
-    background-color: color-mix(in oklab, var(--pathfinder-cream) 92%, white);
+    background-color: var(--pathfinder-surface-soft);
     background-image:
       linear-gradient(
         145deg,
-        color-mix(in oklab, var(--pathfinder-cream) 86%, white) 0%,
-        color-mix(
-            in oklab,
-            var(--pathfinder-cream) 78%,
-            var(--pathfinder-slate)
-          )
-          65%,
-        color-mix(in oklab, var(--pathfinder-cream) 90%, white) 100%
+        color-mix(in oklab, var(--pathfinder-surface-soft) 92%, white) 0%,
+        var(--pathfinder-surface-soft-alt) 65%,
+        color-mix(in oklab, var(--pathfinder-surface-soft) 96%, white) 100%
       ),
       radial-gradient(
         circle at 12% 18%,
-        color-mix(in oklab, var(--pathfinder-cream) 82%, white) 0%,
+        var(--pathfinder-surface-soft-glow) 0%,
         transparent 58%
       );
   }
@@ -240,7 +341,12 @@
       ),
       radial-gradient(
         circle at 70% 20%,
-        color-mix(in oklab, var(--pathfinder-cream) 70%, transparent) 0%,
+        color-mix(
+            in oklab,
+            var(--pathfinder-surface-soft-glow) 70%,
+            transparent
+          )
+          0%,
         transparent 55%
       );
     opacity: 0.08;
@@ -271,7 +377,7 @@
   }
 
   .border-maroon {
-    border-color: var(--pathfinder-maroon);
+    border-color: var(--pathfinder-soft-accent);
   }
 
   .hover\:bg-maroon:hover {
@@ -302,8 +408,19 @@
     );
   }
 
+  .hero-image-scrim {
+    background:
+      linear-gradient(
+        180deg,
+        color-mix(in oklab, var(--pathfinder-maroon-deep) 18%, transparent) 0%,
+        color-mix(in oklab, var(--pathfinder-maroon-deep) 36%, transparent) 48%,
+        color-mix(in oklab, var(--pathfinder-ink) 68%, transparent) 100%
+      ),
+      color-mix(in oklab, var(--pathfinder-maroon-deep) 34%, transparent);
+  }
+
   .bg-cream {
-    background-color: var(--pathfinder-cream);
+    background-color: var(--pathfinder-surface-soft);
   }
 
   .text-gold {
@@ -311,7 +428,7 @@
   }
 
   .text-maroon {
-    color: var(--pathfinder-maroon);
+    color: var(--pathfinder-soft-accent);
   }
 
   .text-cream {
@@ -323,11 +440,11 @@
   }
 
   .text-cream\/55 {
-    color: color-mix(in oklab, var(--pathfinder-cream) 55%, transparent);
+    color: color-mix(in oklab, var(--pathfinder-cream) 62%, transparent);
   }
 
   .text-cream\/45 {
-    color: color-mix(in oklab, var(--pathfinder-cream) 45%, transparent);
+    color: color-mix(in oklab, var(--pathfinder-cream) 54%, transparent);
   }
 
   .text-cream\/50 {
@@ -343,7 +460,7 @@
   }
 
   .text-slate {
-    color: var(--pathfinder-slate);
+    color: var(--pathfinder-soft-text);
   }
 
   .border-cream\/40 {
@@ -353,7 +470,7 @@
   .bg-cream\/10 {
     background-color: color-mix(
       in oklab,
-      var(--pathfinder-cream) 10%,
+      var(--pathfinder-cream) 14%,
       transparent
     );
   }
@@ -361,7 +478,7 @@
   .hover\:bg-cream\/10:hover {
     background-color: color-mix(
       in oklab,
-      var(--pathfinder-cream) 10%,
+      var(--pathfinder-cream) 14%,
       transparent
     );
   }
@@ -585,8 +702,8 @@
   .destination-panel-overlay {
     background: linear-gradient(
       to top,
-      rgba(0, 0, 0, 0.68) 0%,
-      rgba(0, 0, 0, 0.22) 45%,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.4) 45%,
       transparent 100%
     );
   }
@@ -597,9 +714,9 @@
       0 -4px 0 0 color-mix(in oklab, var(--pathfinder-cream) 60%, transparent),
       0 0 0 1px color-mix(in oklab, var(--pathfinder-ink) 10%, transparent),
       0 32px 64px -20px
-        color-mix(in oklab, var(--pathfinder-ink) 55%, transparent),
+        color-mix(in oklab, var(--pathfinder-ink) 65%, transparent),
       0 8px 24px -8px
-        color-mix(in oklab, var(--pathfinder-ink) 25%, transparent);
+        color-mix(in oklab, var(--pathfinder-ink) 30%, transparent);
   }
 
   /* Reduced-motion: flat vertical stack, no sticky */
@@ -724,6 +841,12 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  :is(input, textarea)::placeholder {
+    color: var(--muted-foreground);
+    opacity: 1;
+  }
+
   h1,
   h2,
   h3,

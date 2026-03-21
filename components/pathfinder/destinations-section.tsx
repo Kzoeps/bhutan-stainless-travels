@@ -104,10 +104,10 @@ const DestinationsSection = () => {
                       <p className="font-body eyebrow-compact text-gold">
                         {destination.subtitle}
                       </p>
-                      <h3 className="font-display mt-2 text-2xl text-white sm:text-3xl md:text-4xl">
+                      <h3 className="text-contrast-on-image font-display mt-2 text-2xl sm:text-3xl md:text-4xl">
                         {destination.title}
                       </h3>
-                      <p className="font-body mt-2 text-sm leading-relaxed text-white/90 sm:text-base">
+                      <p className="text-contrast-on-image-muted font-body mt-2 text-sm leading-relaxed sm:text-base">
                         {destination.description}
                       </p>
                     </div>

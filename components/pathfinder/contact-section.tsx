@@ -113,7 +113,7 @@ const ContactSection = () => {
             </div>
             <button
               type="submit"
-              className="font-body hover:bg-gold bg-maroon text-cream w-full rounded-lg py-3 text-sm font-medium tracking-wide transition-all duration-300 hover:text-foreground"
+              className="font-body hover:bg-gold bg-maroon text-cream hover:text-ink w-full rounded-lg py-3 text-sm font-medium tracking-wide transition-all duration-300"
             >
               Request a tailored quote
             </button>
